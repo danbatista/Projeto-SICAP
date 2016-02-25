@@ -1,0 +1,1 @@
+Esse branch serve como base para todo o resto do projeto e todos que forem trabalhar em outros branchs.
