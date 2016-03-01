@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<context:annotation-config />
+
+	<context:component-scan base-package="br.net.sicap.sicap_business" />
+
+	<!-- VISITANTE BEANS -->
+	<bean id="IVisitanteBO" class="br.net.sicap.sicap_business.bo.impl.VisitanteBOImpl">
+		<!-- <constructor-arg ref="dataSource" /> -->
+	</bean>
+
+	<bean id="VisitanteDAO" class="br.net.sicap.sicap_business.dao.impl.VisitanteDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- DETENTO BEANS -->
+	<bean id="IDetentoBO" class="br.net.sicap.sicap_business.bo.impl.DetentoBOImpl">
+	</bean>
+
+	<bean id="DetentoDAO" class="br.net.sicap.sicap_business.dao.impl.DetentoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- TIPO STATUS BEANS -->
+	<bean id="ITipo_StatusBO" class="br.net.sicap.sicap_business.bo.impl.Tipo_StatusBOImpl">
+	</bean>
+
+	<bean id="TipoStatusDAO" class="br.net.sicap.sicap_business.dao.impl.Tipo_StatusDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- AUTENTICACAO BEANS -->
+
+	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
+	</bean>
+
+	<bean id="IUsuarioDAO" class="br.net.sicap.sicap_business.dao.impl.UsuarioDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- AUTENTICACAO BEANS -->
+
+	<bean id="ICelaPavilhaoBO" class="br.net.sicap.sicap_business.bo.impl.CelaPavilhaoBOImpl">
+	</bean>
+	<bean id="ICelaPavilhaoDAO" class="br.net.sicap.sicap_business.dao.impl.CelaPavDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- IClassificacaoPorCorBO BEANS -->
+
+	<bean id="IClassificacaoPorCorBO"
+		class="br.net.sicap.sicap_business.bo.impl.ClassificacaoPorCorBOImpl">
+	</bean>
+	<bean id="IClassificacaoPorCorDAO"
+		class="br.net.sicap.sicap_business.dao.impl.ClassificacaoPorCorDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- IDetEnderecoDAO BEANS -->
+
+	<bean id="IDetEnderecoBO" class="br.net.sicap.sicap_business.bo.impl.DetEnderecoBOImpl">
+	</bean>
+	<bean id="IDetEnderecoDAO" class="br.net.sicap.sicap_business.dao.impl.DetEnderecoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+
+	<!-- IParentescoDAO BEANS -->
+
+	<bean id="IParentescoBO" class="br.net.sicap.sicap_business.bo.impl.ParentescoBOImpl">
+	</bean>
+	<bean id="IParentescoDAO"
+		class="br.net.sicap.sicap_business.dao.impl.ParentescoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- IRestricoesDAO BEANS -->
+
+	<bean id="IRestricoesBO" class="br.net.sicap.sicap_business.bo.impl.RestricoesBOImpl">
+	</bean>
+
+	<bean id="IRestricoesDAO"
+		class="br.net.sicap.sicap_business.dao.impl.RestricoesDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
+		<!-- IRestricoesDAO BEANS -->
+
+	<bean id="IHistoricoStatusBO" class="br.net.sicap.sicap_business.bo.impl.HistoricoStatusBOImpl">
+	</bean>
+
+	<bean id="IHistoricoStatusDAO"
+		class="br.net.sicap.sicap_business.dao.impl.HistoricoStatusDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
+
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+
+	<!-- PRD DataSource (assign PRD database from another environment) -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url"
+			value="jdbc:sqlserver://CLIENTE-HP\SQLEXPRESS;DataBaseName=BdAcesso2" />
+		<property name="username" value="sicap" />
+		<property name="password" value="sicap" />
+	</bean>
+
+<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!-- 		<property name="driverClassName" value="org.postgresql.Driver" /> -->
+<!-- 		<property name="url" value="jdbc:postgresql://localhost:5432/BdAcesso2" /> -->
+<!-- 		<property name="username" value="postgres" /> -->
+<!-- 		<property name="password" value="admin" /> -->
+<!-- 	</bean> -->
+
+
+</beans>
