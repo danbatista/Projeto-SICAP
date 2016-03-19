@@ -6,10 +6,10 @@
 package br.net.sicap.sicap_business.vo;
 
 
-public class celaVO
+public class CelaVO
 {
 
-    public celaVO()
+    public CelaVO()
     {
     }
 

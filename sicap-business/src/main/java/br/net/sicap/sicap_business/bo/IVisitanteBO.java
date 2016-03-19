@@ -8,18 +8,17 @@ package br.net.sicap.sicap_business.bo;
 import br.net.sicap.sicap_business.vo.VisitanteVO;
 import java.util.List;
 
-public interface IVisitanteBO
-{
+public interface IVisitanteBO {
 
-	  public  boolean inserirVisitante(VisitanteVO vo);
+	public boolean inserirVisitante(VisitanteVO vo);
 
-	    public  boolean alterarVisitante(VisitanteVO vo);
+	public boolean alterarVisitante(VisitanteVO vo);
 
-	    public  boolean inativarVisitante(int i);
+	public boolean inativarVisitante(int i);
 
-	    public  List<VisitanteVO> listaTodos();
+	public List<VisitanteVO> listaTodos();
 
-	    public  List<VisitanteVO>  listaPersonalizada();
+	public List<VisitanteVO> listaPersonalizada();
 
-		public VisitanteVO listaPorId(int id);
+	public VisitanteVO listaPorId(int id);
 }

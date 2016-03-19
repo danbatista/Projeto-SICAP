@@ -8,7 +8,7 @@ package br.net.sicap.sicap_business.dao;
 import br.net.sicap.sicap_business.vo.TipoSaidaVO;
 import java.util.List;
 
-public interface Itipo_SaidaDAO
+public interface ITipo_SaidaDAO
 {
 
     public abstract boolean inserirTipoSaida(TipoSaidaVO tiposaidavo);

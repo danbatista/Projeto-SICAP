@@ -8,6 +8,8 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="/sicap_assets/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/sicap_assets/assets/css/fonts.css" rel="stylesheet">
+<link href="/sicap_assets/assets/css/sicap.css" rel="stylesheet">
 <link href="/sicap_assets/assets/css/bootstrap-responsive.min.css"
 	rel="stylesheet">
 <link
@@ -31,22 +33,22 @@
 					class="icon-bar"></span> <span class="icon-bar"></span>
 				</a>
 				<!--  <a class="brand" href="index.html">SICAP </a> -->
-				<ul>
-					<li id="li"><a class="navbar brand" href="home">Visitantes
+				<ul class = "menu">
+					<li id="li"><a class="" href="home">Visitantes
 					</a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Detentos
+					<li id="li"><a class="" href="index.html">Detentos
 					</a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Digitais
+					<li id="li"><a class="" href="index.html">Digitais
 					</a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Históricos
+					<li id="li"><a class="" href="index.html">Históricos
 							entradas/saidas </a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Histórico
+					<li id="li"><a class="" href="index.html">Histórico
 							visitas </a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Restrições
+					<li id="li"><a class="" href="index.html">Restrições
 					</a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Digitais
+					<li id="li"><a class="" href="index.html">Digitais
 					</a></li>
-					<li id="li"><a class="navbar brand" href="index.html">Associação</a>
+					<li id="li"><a class="" href="index.html">Associação</a>
 					</li>
 				</ul>
 
@@ -175,77 +177,7 @@
 		</div>
 		<!-- /main-inner -->
 
-		<div class="widget widget-nopad">
-			<div class="lista">
-
-				<div class="widget-header">
-					<i class="icon-list-alt"></i>
-					<h3>Visitantes Ativos</h3>
-				</div>
-				<div class="widget widget-table action-table">
-					<!-- /widget-header -->
-					<div class="widget-content">
-						<table class="table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th>DetID</th>
-									<th>Situacao</th>
-									<th>Nome</th>
-									<th>Apelido</th>
-									<!--	<th><strong>Observacao</strong></th>
-											<th><strong>VisFoto</strong></th>
-											<th><strong>VisLogradouro</strong></th>
-											<th><strong>VisNumero</strong></th>
-											<th><strong>VisComplemento</strong></th>
-											<th><strong>VisBairro</strong></th>
-											<th><strong>VisCEP</strong></th>
-											<th><strong>VisCidade</strong></th>
-											<th><strong>VisEstado</strong></th>
-											<th><strong>PrtID</strong></th> -->
-									<th>RG</th>
-									<th>CPF</th>
-									<th>Telefone</th>
-									<th>Selecionar/Inativar</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="item" items="${listaVisitante}" varStatus="id">
-									<tr>
-										<td>${item.detID}</td>
-										<td>${item.visSituacao}</td>
-										<td>${item.visNome}</td>
-										<td>${item.visApelido}</td>
-										<!--	<td>${item.visObservacao}</td>
-											<td>${item.visFoto}</td>
-											<td>${item.visLogradouro}</td>
-											<td>${item.visNumero}</td>
-											<td>${item.visComplemento}</td>
-											<td>${item.visBairro}</td>
-											<td>${item.visCEP}</td>
-											<td>${item.visCidade}</td>
-											<td>${item.visEstado}</td>
-											<td>${item.prtID}</td>  -->
-										<td>${item.visRG}</td>
-										<td>${item.visCPF}</td>
-										<td>${item.visTelefone}</td>
-										<td class="td-actions"><a
-											class="btn btn-small btn-success"
-											href="visitanteUpdate?id=${item.visID}"> <i
-												class="btn-icon-only icon-ok"> </i></a> <a
-											class="btn btn-danger btn-small"
-											onclick="javascript:inativa();"
-											href="inativa?id=${item.visID}"> <i
-												class="btn-icon-only icon-remove"> </i></a></td>
-									</tr>
-								</c:forEach>
-
-							</tbody>
-						</table>
-					</div>
-					<!-- /widget-content -->
-				</div>
-			</div>
-		</div>
+		
 	</div>
 	<!-- /main -->
 
@@ -272,113 +204,5 @@ if (decisao){
 	<script src="/sicap_assets/assets/js/bootstrap.js"></script>
 	<script language="javascript" type="text/javascript"
 		src="/sicap_assets/assets/js/full-calendar/fullcalendar.min.js"></script>
-
-	<script src="js/base.js"></script>
-	<script>
-		var lineChartData = {
-			labels : [ "January", "February", "March", "April", "May", "June",
-					"July" ],
-			datasets : [ {
-				fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,1)",
-				pointColor : "rgba(220,220,220,1)",
-				pointStrokeColor : "#fff",
-				data : [ 65, 59, 90, 81, 56, 55, 40 ]
-			}, {
-				fillColor : "rgba(151,187,205,0.5)",
-				strokeColor : "rgba(151,187,205,1)",
-				pointColor : "rgba(151,187,205,1)",
-				pointStrokeColor : "#fff",
-				data : [ 28, 48, 40, 19, 96, 27, 100 ]
-			} ]
-
-		}
-
-		var myLine = new Chart(document.getElementById("area-chart")
-				.getContext("2d")).Line(lineChartData);
-
-		var barChartData = {
-			labels : [ "January", "February", "March", "April", "May", "June",
-					"July" ],
-			datasets : [ {
-				fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,1)",
-				data : [ 65, 59, 90, 81, 56, 55, 40 ]
-			}, {
-				fillColor : "rgba(151,187,205,0.5)",
-				strokeColor : "rgba(151,187,205,1)",
-				data : [ 28, 48, 40, 19, 96, 27, 100 ]
-			} ]
-
-		}
-
-		$(document).ready(function() {
-			var date = new Date();
-			var d = date.getDate();
-			var m = date.getMonth();
-			var y = date.getFullYear();
-			var calendar = $('#calendar').fullCalendar({
-				header : {
-					left : 'prev,next today',
-					center : 'title',
-					right : 'month,agendaWeek,agendaDay'
-				},
-				selectable : true,
-				selectHelper : true,
-				select : function(start, end, allDay) {
-					var title = prompt('Event Title:');
-					if (title) {
-						calendar.fullCalendar('renderEvent', {
-							title : title,
-							start : start,
-							end : end,
-							allDay : allDay
-						}, true // make the event "stick"
-						);
-					}
-					calendar.fullCalendar('unselect');
-				},
-				editable : true,
-				events : [ {
-					title : 'All Day Event',
-					start : new Date(y, m, 1)
-				}, {
-					title : 'Long Event',
-					start : new Date(y, m, d + 5),
-					end : new Date(y, m, d + 7)
-				}, {
-					id : 999,
-					title : 'Repeating Event',
-					start : new Date(y, m, d - 3, 16, 0),
-					allDay : false
-				}, {
-					id : 999,
-					title : 'Repeating Event',
-					start : new Date(y, m, d + 4, 16, 0),
-					allDay : false
-				}, {
-					title : 'Meeting',
-					start : new Date(y, m, d, 10, 30),
-					allDay : false
-				}, {
-					title : 'Lunch',
-					start : new Date(y, m, d, 12, 0),
-					end : new Date(y, m, d, 14, 0),
-					allDay : false
-				}, {
-					title : 'Birthday Party',
-					start : new Date(y, m, d + 1, 19, 0),
-					end : new Date(y, m, d + 1, 22, 30),
-					allDay : false
-				}, {
-					title : 'EGrappler.com',
-					start : new Date(y, m, 28),
-					end : new Date(y, m, 29),
-					url : 'http://EGrappler.com/'
-				} ]
-			});
-		});
-	</script>
-	<!-- /Calendar -->
 </body>
 </html>

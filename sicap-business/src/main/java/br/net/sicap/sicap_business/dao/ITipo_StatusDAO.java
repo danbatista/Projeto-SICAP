@@ -11,11 +11,11 @@ import java.util.List;
 public interface ITipo_StatusDAO
 {
 
-    public abstract boolean inserirTipoStatus(TipoStatusVO tipostatusvo);
+    public  boolean inserirTipoStatus(TipoStatusVO vo);
 
-    public abstract boolean alterarTipoStatus(TipoStatusVO tipostatusvo);
+    public  boolean alterarTipoStatus(TipoStatusVO vo);
 
-    public abstract boolean deletarTipoStatus(int i);
+    public  boolean deletarTipoStatus(int cod);
 
-    public abstract List listaTodos();
+    public List<TipoStatusVO> listaTodos();
 }

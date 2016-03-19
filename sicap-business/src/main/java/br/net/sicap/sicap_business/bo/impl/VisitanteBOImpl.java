@@ -10,8 +10,9 @@ import br.net.sicap.sicap_business.dao.IVisitanteDAO;
 import br.net.sicap.sicap_business.vo.VisitanteVO;
 
 public class VisitanteBOImpl implements IVisitanteBO {
-	 @Autowired
-	    private IVisitanteDAO dao;
+	@Autowired
+	private IVisitanteDAO dao;
+
 	public VisitanteBOImpl() {
 	}
 

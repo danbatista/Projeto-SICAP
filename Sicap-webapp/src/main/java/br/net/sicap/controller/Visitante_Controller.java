@@ -26,28 +26,29 @@ public class Visitante_Controller {
 	@RequestMapping(value = "/")
 	public ModelAndView index() {
 		final ModelAndView modelAndView = new ModelAndView("index");
-		 modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
-		return modelAndView;
-	}
-// ---------------------------------------------------------------------------- \\
-	@RequestMapping(value = "home")
-	public ModelAndView indexHome() {
-		final ModelAndView modelAndView = new ModelAndView("index");
-		 modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
 		return modelAndView;
 	}
 	
-
-	@RequestMapping(value ="insert")
-	public ModelAndView insert() {
-		ModelAndView modelAndView = new ModelAndView("visitante_insert");	
-		return modelAndView;
-	}
 
 	@ModelAttribute(value = "Visitante_Command")
 	public Visitante_Command getVisitante_CommandObject() {
 		return new Visitante_Command();
 	}
+	
+// ---------------------------------------------------------------------------- \\
+	@RequestMapping(value = "home")
+	public ModelAndView indexHome() {
+		final ModelAndView modelAndView = new ModelAndView("visitanteHome");
+		 modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
+		return modelAndView;
+	}
+	
+	@RequestMapping(value ="visitante_insert")
+	public ModelAndView insert() {
+		ModelAndView modelAndView = new ModelAndView("visitante_insert");	
+		return modelAndView;
+	}
+
 	@RequestMapping(value = "visitanteHome")
 	public ModelAndView renderInsert() {
 	
@@ -88,6 +89,7 @@ public class Visitante_Controller {
 	        return modelAndView;
 	}
 	private int idVisitante;
+	
 	@RequestMapping(value = "visitanteUpdate")
 	public ModelAndView carregaTelaVisitante(@RequestParam(value="id") int id){
 		ModelAndView modelAndView = new ModelAndView("visitante_update");

@@ -8,18 +8,17 @@ package br.net.sicap.sicap_business.dao;
 import br.net.sicap.sicap_business.vo.VisitanteVO;
 import java.util.List;
 
-public interface IVisitanteDAO
-{
+public interface IVisitanteDAO {
 
-    public  boolean inserirVisitante(VisitanteVO vo);
+	public boolean inserirVisitante(VisitanteVO vo);
 
-    public  boolean alterarVisitante(VisitanteVO vo);
+	public boolean alterarVisitante(VisitanteVO vo);
 
-    public  boolean inativarVisitante(int i);
-
-    public  List<VisitanteVO> listaTodos();
-
-    public  List<VisitanteVO>  listaPersonalizada();
+	public boolean inativarVisitante(int i);
+   
+	public List<VisitanteVO> listaTodos();
+	  
+	public List<VisitanteVO> listaPersonalizada();
 
 	public VisitanteVO listaPorId(int id);
 }

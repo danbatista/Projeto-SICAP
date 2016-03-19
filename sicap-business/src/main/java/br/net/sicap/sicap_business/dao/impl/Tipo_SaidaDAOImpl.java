@@ -5,14 +5,14 @@
 
 package br.net.sicap.sicap_business.dao.impl;
 
-import br.net.sicap.sicap_business.dao.Itipo_SaidaDAO;
+import br.net.sicap.sicap_business.dao.ITipo_SaidaDAO;
 import br.net.sicap.sicap_business.vo.TipoSaidaVO;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class Tipo_SaidaDAOImpl extends JdbcTemplate
-    implements Itipo_SaidaDAO
+    implements ITipo_SaidaDAO
 {
 
     public Tipo_SaidaDAOImpl()

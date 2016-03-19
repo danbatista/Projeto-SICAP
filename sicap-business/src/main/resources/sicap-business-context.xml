@@ -13,7 +13,7 @@
 
 	<context:component-scan base-package="br.net.sicap.sicap_business" />
 
-	<!-- Import dos arquivos de contexto dos WS -->
+	<!-- VISITANTE BEANS -->
 	<bean id="IVisitanteBO" class="br.net.sicap.sicap_business.bo.impl.VisitanteBOImpl">
 		<!-- <constructor-arg ref="dataSource" /> -->
 	</bean>
@@ -27,12 +27,16 @@
 	<!-- class="br.net.sicap.sicap_business.dao.impl.DetentoDAOImpl"> -->
 	<!-- <constructor-arg ref="dataSource"/> -->
 	<!-- </bean> -->
-
-	<!-- <bean -->
-	<!-- id="TipoStatusDAO" -->
-	<!-- class="br.net.sicap.sicap_business.dao.impl.Tipo_StatusDAOImpl"> -->
-	<!-- <constructor-arg ref="dataSource"/> -->
-	<!-- </bean> -->
+   
+<!--    TIPO STATUS BEANS -->
+    <bean id="ITipo_StatusBO" class="br.net.sicap.sicap_business.bo.impl.Tipo_StatusBOImpl">
+	</bean>
+	
+	<bean
+	id="TipoStatusDAO"
+	class="br.net.sicap.sicap_business.dao.impl.Tipo_StatusDAOImpl">
+	<constructor-arg ref="dataSource"/>
+	</bean>
 
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
