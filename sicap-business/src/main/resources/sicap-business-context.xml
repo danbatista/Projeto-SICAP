@@ -21,21 +21,20 @@
 	<bean id="VisitanteDAO" class="br.net.sicap.sicap_business.dao.impl.VisitanteDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
-
-	<!-- <bean -->
-	<!-- id="DetentoDAO" -->
-	<!-- class="br.net.sicap.sicap_business.dao.impl.DetentoDAOImpl"> -->
-	<!-- <constructor-arg ref="dataSource"/> -->
-	<!-- </bean> -->
-   
-<!--    TIPO STATUS BEANS -->
-    <bean id="ITipo_StatusBO" class="br.net.sicap.sicap_business.bo.impl.Tipo_StatusBOImpl">
+	<!-- DETENTO BEANS -->
+	<bean id="IDetentoBO" class="br.net.sicap.sicap_business.bo.impl.DetentoBOImpl">
 	</bean>
 	
-	<bean
-	id="TipoStatusDAO"
-	class="br.net.sicap.sicap_business.dao.impl.Tipo_StatusDAOImpl">
-	<constructor-arg ref="dataSource"/>
+	<bean id="DetentoDAO" class="br.net.sicap.sicap_business.dao.impl.DetentoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- TIPO STATUS BEANS -->
+	<bean id="ITipo_StatusBO" class="br.net.sicap.sicap_business.bo.impl.Tipo_StatusBOImpl">
+	</bean>
+
+	<bean id="TipoStatusDAO" class="br.net.sicap.sicap_business.dao.impl.Tipo_StatusDAOImpl">
+		<constructor-arg ref="dataSource" />
 	</bean>
 
 	<bean id="txManager"

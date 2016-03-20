@@ -1,108 +1,185 @@
 package br.net.sicap.command;
 
+import java.sql.Date;
+
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Detento_Command {
 
-	private int id;
+	private Integer DetID;
 	@NotEmpty
-	private String situacao;
-	@NotEmpty
-	private String nome;
-	private String pai;
-	private String mae;
-	@NotEmpty
-	private String apelido;
-	@NotEmpty
-	private String prontuario;
-	@NotEmpty
-	private String pavilhao;
-	@NotEmpty
-	private String cela;
-	@NotEmpty
-	private String limite_visitantes;
-	private String class_cor;
-	public Detento_Command(int id, String situacao, String nome, String pai, String mae, String apelido, String prontuario,
-			String pavilhao, String cela, String limite_visitantes, String class_cor) {
-		super();
-		this.id = id;
-		this.situacao = situacao;
-		this.nome = nome;
-		this.pai = pai;
-		this.mae = mae;
-		this.apelido = apelido;
-		this.prontuario = prontuario;
-		this.pavilhao = pavilhao;
-		this.cela = cela;
-		this.limite_visitantes = limite_visitantes;
-		this.class_cor = class_cor;
+	private Integer DetSituacao;
+	private String DetNome;
+	private String DetApelido;
+	private String DetObservacao;
+	private String DetFoto;
+	private String DetProntuario;
+	private String DetPavilhao;
+	private String DetCela;
+	@NotNull
+	private Integer DetLimiteVisitantes;
+	private Integer DetLimiteSaidas;
+	private Integer DetClassificacaoCor;
+	private Date DetDataPrisao;
+	private String DetNomePai;
+	private String DetNomeMae;
+	private String DetDig01;
+	private String DetDig02;
+	private Integer PavID;
+	private Integer CelID;
+
+	public Integer getDetSituacao() {
+		return DetSituacao;
 	}
-	public int getId() {
-		return id;
+
+	public void setDetSituacao(Integer DetSituacao) {
+		this.DetSituacao = DetSituacao;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public String getDetNome() {
+		return DetNome;
 	}
-	public String getSituacao() {
-		return situacao;
+
+	public void setDetNome(String DetNome) {
+		this.DetNome = DetNome;
 	}
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
+
+	public String getDetApelido() {
+		return DetApelido;
 	}
-	public String getNome() {
-		return nome;
+
+	public void setDetApelido(String DetApelido) {
+		this.DetApelido = DetApelido;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public String getDetObservacao() {
+		return DetObservacao;
 	}
-	public String getPai() {
-		return pai;
+
+	public void setDetObservacao(String DetObservacao) {
+		this.DetObservacao = DetObservacao;
 	}
-	public void setPai(String pai) {
-		this.pai = pai;
+
+	public String getDetFoto() {
+		return DetFoto;
 	}
-	public String getMae() {
-		return mae;
+
+	public void setDetFoto(String DetFoto) {
+		this.DetFoto = DetFoto;
 	}
-	public void setMae(String mae) {
-		this.mae = mae;
+
+	public String getDetProntuario() {
+		return DetProntuario;
 	}
-	public String getApelido() {
-		return apelido;
+
+	public void setDetProntuario(String DetProntuario) {
+		this.DetProntuario = DetProntuario;
 	}
-	public void setApelido(String apelido) {
-		this.apelido = apelido;
+
+	public String getDetPavilhao() {
+		return DetPavilhao;
 	}
-	public String getProntuario() {
-		return prontuario;
+
+	public void setDetPavilhao(String DetPavilhao) {
+		this.DetPavilhao = DetPavilhao;
 	}
-	public void setProntuario(String prontuario) {
-		this.prontuario = prontuario;
+
+	public String getDetCela() {
+		return DetCela;
 	}
-	public String getPavilhao() {
-		return pavilhao;
+
+	public void setDetCela(String DetCela) {
+		this.DetCela = DetCela;
 	}
-	public void setPavilhao(String pavilhao) {
-		this.pavilhao = pavilhao;
+
+	public Integer getDetLimiteVisitantes() {
+		return DetLimiteVisitantes;
 	}
-	public String getCela() {
-		return cela;
+
+	public void setDetLimiteVisitantes(Integer DetLimiteVisitantes) {
+		this.DetLimiteVisitantes = DetLimiteVisitantes;
 	}
-	public void setCela(String cela) {
-		this.cela = cela;
+
+	public Integer getDetLimiteSaidas() {
+		return DetLimiteSaidas;
 	}
-	public String getLimite_visitantes() {
-		return limite_visitantes;
+
+	public void setDetLimiteSaidas(Integer DetLimiteSaidas) {
+		this.DetLimiteSaidas = DetLimiteSaidas;
 	}
-	public void setLimite_visitantes(String limite_visitantes) {
-		this.limite_visitantes = limite_visitantes;
+
+	public Integer getDetClassificacaoCor() {
+		return DetClassificacaoCor;
 	}
-	public String getClass_cor() {
-		return class_cor;
+
+	public void setDetClassificacaoCor(Integer DetClassificacaoCor) {
+		this.DetClassificacaoCor = DetClassificacaoCor;
 	}
-	public void setClass_cor(String class_cor) {
-		this.class_cor = class_cor;
+
+	public Date getDetDataPrisao() {
+		return DetDataPrisao;
+	}
+
+	public void setDetDataPrisao(Date DetDataPrisao) {
+		this.DetDataPrisao = DetDataPrisao;
+	}
+
+	public String getDetNomePai() {
+		return DetNomePai;
+	}
+
+	public void setDetNomePai(String DetNomePai) {
+		this.DetNomePai = DetNomePai;
+	}
+
+	public String getDetNomeMae() {
+		return DetNomeMae;
+	}
+
+	public void setDetNomeMae(String DetNomeMae) {
+		this.DetNomeMae = DetNomeMae;
+	}
+
+	public String getDetDig01() {
+		return DetDig01;
+	}
+
+	public void setDetDig01(String DetDig01) {
+		this.DetDig01 = DetDig01;
+	}
+
+	public String getDetDig02() {
+		return DetDig02;
+	}
+
+	public void setDetDig02(String DetDig02) {
+		this.DetDig02 = DetDig02;
+	}
+
+	public Integer getPavID() {
+		return PavID;
+	}
+
+	public void setPavID(Integer PavID) {
+		this.PavID = PavID;
+	}
+
+	public Integer getCelID() {
+		return CelID;
+	}
+
+	public void setCelID(Integer CelID) {
+		this.CelID = CelID;
+	}
+	
+	public Integer getDetID() {
+		return DetID;
+	}
+
+	public void setDetID(Integer detID) {
+		DetID = detID;
 	}
 
 }

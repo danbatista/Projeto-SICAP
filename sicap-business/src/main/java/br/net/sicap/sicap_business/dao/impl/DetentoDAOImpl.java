@@ -1,47 +1,72 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) 
-// Source File Name:   DetentoDAOImpl.java
 
 package br.net.sicap.sicap_business.dao.impl;
 
 import br.net.sicap.sicap_business.dao.IDetentoDAO;
 import br.net.sicap.sicap_business.vo.DetentoVO;
+import br.net.sicap.sicap_business.vo.VisitanteVO;
+
+import java.sql.Types;
 import java.util.List;
 import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class DetentoDAOImpl extends JdbcTemplate
-    implements IDetentoDAO
-{
+public class DetentoDAOImpl extends JdbcTemplate implements IDetentoDAO {
 
-    public DetentoDAOImpl(DataSource dataSource)
-    {
-        setDataSource(dataSource);
-    }
+	private final String INSERT = "INSERT INTO tblDetento(DetSituacao,DetNome, DetApelido, "
+			+ "DetObservacao, DetProntuario, DetPavilhao,DetCela,DetLimiteVisitantes,"
+			+ "DetLimiteSaidas, DetClassificacaoCor,DetDataPrisao, DetNomePai,DetNomeMae,DetDig01,"
+			+ "DetDig02, PavID, CelID) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String UPDATE = "UPDATE tblDetento SET DetSituacao = ?,DetNome = ?, DetApelido = ?, "
+			+ "DetObservacao = ?, DetProntuario = ?, DetPavilhao = ?,DetCela = ?,DetLimiteVisitantes =?,"
+			+ "DetLimiteSaidas = ?, DetClassificacaoCor = ?,DetDataPrisao = ?, DetNomePai = ?,DetNomeMae = ?,DetDig01 = ?,"
+			+ "DetDig02 = ?, PavID = ?, CelID = ? WHERE DetID = ? ";
+	private final String INATIVE = "UPDATE tblDetento SET DetSituacao = 0 WHERE DetID = ?";
+	private final String LISTALL = "SELECT TOP 200 * FROM tblDetento";
+	private final String LISTID = "SELECT * FROM tblDetento WHERE DetID = ?";
 
-    public boolean inserirDetento(DetentoVO vo)
-    {
-        return false;
-    }
+	public DetentoDAOImpl(DataSource dataSource) {
+		setDataSource(dataSource);
+	}
 
-    public boolean alteraDetento(DetentoVO vo)
-    {
-        return false;
-    }
+	public boolean inserirDetento(DetentoVO vo) {
+		this.update(INSERT,
+				new Object[] { vo.getDetSituacao(), vo.getDetNome(), vo.getDetApelido(), vo.getDetObservacao(),
+						vo.getDetProntuario(), vo.getDetPavilhao(), vo.getDetCela(), vo.getDetLimiteVisitantes(),
+						vo.getDetLimiteSaidas(), vo.getDetClassificacaoCor(), vo.getDetDataPrisao(), vo.getDetNomePai(),
+						vo.getDetNomeMae(), vo.getDetDig01(), vo.getDetDig02(), vo.getPavID(), vo.getCelID() });
+		return true;
+	}
 
-    public boolean inativarDetento(int id)
-    {
-        return false;
-    }
+	public boolean alteraDetento(DetentoVO vo) {
+		this.update(UPDATE,
+				new Object[] { vo.getDetSituacao(), vo.getDetNome(), vo.getDetApelido(), vo.getDetObservacao(),
+						vo.getDetProntuario(), vo.getDetPavilhao(), vo.getDetCela(), vo.getDetLimiteVisitantes(),
+						vo.getDetLimiteSaidas(), vo.getDetClassificacaoCor(), vo.getDetDataPrisao(), vo.getDetNomePai(),
+						vo.getDetNomeMae(), vo.getDetDig01(), vo.getDetDig02(), vo.getPavID(), vo.getCelID(), vo.getDetID()});
+		return true;
+	}
 
-    public List listaTodos()
-    {
-        return null;
-    }
+	public boolean inativarDetento(int id) {
+		this.update(INATIVE, new Object[] { id });
+		return true;
+	}
 
-    private final String INSERT = " insert into";
-    private final String UPDATE = " UPDATE ";
-    private final String INVATIVE = " ";
-    private final String LISTALL = " ";
+	public List<DetentoVO> listaTodos() {
+		List<DetentoVO> lista = null;
+		try {
+			lista = query(LISTALL, new BeanPropertyRowMapper<DetentoVO>(DetentoVO.class));
+			return lista;
+		} catch (Exception e) {
+			System.out.println("" + e.getCause());
+			return lista;
+		}
+
+	}
+	public DetentoVO listById(int cod) {
+		// TODO Auto-generated method stub
+		return this.queryForObject(LISTID, new Object[] { cod }, new int[] { Types.INTEGER },
+				new BeanPropertyRowMapper<DetentoVO>(DetentoVO.class));
+	}
 }

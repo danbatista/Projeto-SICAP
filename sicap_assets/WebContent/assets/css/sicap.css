@@ -35,7 +35,14 @@ color:#fff;
 text-shadow:0px 0px 5px #fff; 
   border-radius: 20px;
 }
-
+.menu li .active{
+	background: #481212; 
+color:#fff; 
+-moz-box-shadow:0 3px 10px 0 #CCC; 
+-webkit-box-shadow:0 3px 10px 0 #ccc; 
+text-shadow:0px 0px 5px #fff; 
+  border-radius: 20px;
+}
 .menu li  ul{
 position:absolute; 
 top:25px; 

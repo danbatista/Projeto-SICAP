@@ -11,11 +11,13 @@ import java.util.List;
 public interface IDetentoDAO
 {
 
-    public abstract boolean inserirDetento(DetentoVO detentovo);
+    public  boolean inserirDetento(DetentoVO detentovo);
 
-    public abstract boolean alteraDetento(DetentoVO detentovo);
+    public  boolean alteraDetento(DetentoVO detentovo);
 
-    public abstract boolean inativarDetento(int i);
+    public  boolean inativarDetento(int cod);
 
-    public abstract List listaTodos();
+    public  List<DetentoVO> listaTodos();
+   
+    public  DetentoVO listById(int cod);
 }
