@@ -11,11 +11,11 @@ import java.util.List;
 public interface IClassificacaoPorCor
 {
 
-    public abstract boolean inserirClassCor(ClassificacaoCorVO classificacaocorvo);
+    public  boolean inserirClassCor(ClassificacaoCorVO classificacaocorvo);
 
-    public abstract boolean alteraClassCor(ClassificacaoCorVO classificacaocorvo);
+    public  boolean alteraClassCor(ClassificacaoCorVO classificacaocorvo);
 
-    public abstract boolean inativarClassCor(int i);
+    public  boolean inativarClassCor(int i);
 
-    public abstract List listaTodos();
+    public  List<ClassificacaoCorVO> listaTodos();
 }

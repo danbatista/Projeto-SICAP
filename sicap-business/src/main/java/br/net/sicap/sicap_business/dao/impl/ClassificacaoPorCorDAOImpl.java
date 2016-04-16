@@ -7,36 +7,34 @@ import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class ClassificacaoPorCorDAOImpl extends JdbcTemplate
-    implements IClassificacaoPorCor
-{
+public class ClassificacaoPorCorDAOImpl extends JdbcTemplate implements IClassificacaoPorCor {
 
-    public ClassificacaoPorCorDAOImpl()
-    {
-    }
+	
+	private String INSERT;
+	private String DELETE; 
+	private String UPDATE; 
+	private String LIST;  
 
-    public ClassificacaoPorCorDAOImpl(DataSource dataSource)
-    {
-        setDataSource(dataSource);
-    }
+	public ClassificacaoPorCorDAOImpl() {
+	}
 
-    public boolean inserirClassCor(ClassificacaoCorVO vo)
-    {
-        return false;
-    }
+	public ClassificacaoPorCorDAOImpl(DataSource dataSource) {
+		setDataSource(dataSource);
+	}
 
-    public boolean alteraClassCor(ClassificacaoCorVO vo)
-    {
-        return false;
-    }
+	public boolean inserirClassCor(ClassificacaoCorVO vo) {
+		return false;
+	}
 
-    public boolean inativarClassCor(int id)
-    {
-        return false;
-    }
+	public boolean alteraClassCor(ClassificacaoCorVO vo) {
+		return false;
+	}
 
-    public List listaTodos()
-    {
-        return null;
-    }
+	public boolean inativarClassCor(int id) {
+		return false;
+	}
+
+	public List listaTodos() {
+		return null;
+	}
 }

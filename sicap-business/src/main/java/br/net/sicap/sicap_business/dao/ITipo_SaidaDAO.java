@@ -11,11 +11,11 @@ import java.util.List;
 public interface ITipo_SaidaDAO
 {
 
-    public abstract boolean inserirTipoSaida(TipoSaidaVO tiposaidavo);
+    public  boolean inserirTipoSaida(TipoSaidaVO tiposaidavo);
 
-    public abstract boolean alterarTipoSaida(TipoSaidaVO tiposaidavo);
+    public  boolean alterarTipoSaida(TipoSaidaVO tiposaidavo);
 
-    public abstract boolean DeletarTipoSaida(int i);
+    public  boolean DeletarTipoSaida(int i);
 
-    public abstract List listaTodos();
+    public  List<TipoSaidaVO> listaTodos();
 }

@@ -11,11 +11,11 @@ import java.util.List;
 public interface IParentescoDAO
 {
 
-    public abstract boolean inserirParentesco(ParentescoVO parentescovo);
+    public  boolean inserirParentesco(ParentescoVO parentescovo);
 
-    public abstract boolean alterarParentesco(ParentescoVO parentescovo);
+    public  boolean alterarParentesco(ParentescoVO parentescovo);
 
-    public abstract boolean DeletarParentesco(int i);
+    public  boolean DeletarParentesco(int i);
 
-    public abstract List listaTodos();
+    public  List<ParentescoVO> listaTodos();
 }
