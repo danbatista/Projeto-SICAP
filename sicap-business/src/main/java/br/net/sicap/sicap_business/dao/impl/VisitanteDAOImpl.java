@@ -22,7 +22,7 @@ public class VisitanteDAOImpl extends JdbcTemplate implements IVisitanteDAO {
 			+ " WHERE VisID = ?";
 	private final String LISTBYID = "SELECT * FROM tblVisitante where VisID = ? ";
 	private final String INATIVE = "UPDATE tblVisitante SET VisSituacao= 0 WHERE VisID = ? ";
-	private final String LISTALL = "SELECT TOP 200 DetID,VisSituacao,VisNome,"
+	private final String LISTALL = "SELECT DetID,VisSituacao,VisNome,"
 			+ "VisApelido,VisObservacao,VisFoto,VisLogradouro,VisNumero,"
 			+ "VisComplemento,VisBairro, VisCEP,VisCidade,VisEstado,PrtID,"
 			+ "VisRG,VisCPF,VisTelefone from  tblVisitante ORDER BY VisNome ASC ";
