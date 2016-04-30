@@ -230,7 +230,7 @@
 										<td>${item.visTelefone}</td>
 										<td class="td-actions"><a
 											class="btn btn-small btn-success"
-											href="update?id=${item.visID}"> <i
+											href="visitanteUpdate?id=${item.visID}"> <i
 												class="btn-icon-only icon-ok"> </i></a> <a
 											class="btn btn-danger btn-small"
 											onclick="javascript:inativa();"
