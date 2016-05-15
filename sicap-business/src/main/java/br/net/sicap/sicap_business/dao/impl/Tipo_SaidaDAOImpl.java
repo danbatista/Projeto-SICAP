@@ -5,17 +5,18 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import br.net.sicap.sicap_business.dao.ITipo_SaidaDAO;
+import br.net.sicap.sicap_business.vo.DetentoVO;
 import br.net.sicap.sicap_business.vo.TipoSaidaVO;
 
 public class Tipo_SaidaDAOImpl extends JdbcTemplate implements ITipo_SaidaDAO {
 
-	private String INSERT;
-	private String DELETE;
-	private String UPDATE;
-	private String LIST;
+	private final static String INSERT = "INSERT INTO tblTipoSaida(TpSdDescricao,TpSdContarNoHistorico) VALUES (?,?)";
+	private final static String UPDATE = "UPDATE tblTipoSaida SET TpSdDescricao = ?, TpSdContarNoHistorico = ? WHERE TpSdID = ?"; 
+	private final static String LIST = "SELECT * FROM tblTipoSaida";
 	 
 	
 	public Tipo_SaidaDAOImpl() {
@@ -26,11 +27,15 @@ public class Tipo_SaidaDAOImpl extends JdbcTemplate implements ITipo_SaidaDAO {
 	}
 
 	public boolean inserirTipoSaida(TipoSaidaVO vo) {
-		return false;
+		this.update(INSERT, new Object[]{vo.getTpSdDescricao(), vo.getTpSdContarNoHistorico()});
+		return true;
+		
 	}
 
 	public boolean alterarTipoSaida(TipoSaidaVO vo) {
-		return false;
+		this.update(UPDATE, new Object[]{vo.getTpSdDescricao(), vo.getTpSdContarNoHistorico()});
+		return true;
+	
 	}
 
 	public boolean DeletarTipoSaida(int id) {
@@ -38,6 +43,14 @@ public class Tipo_SaidaDAOImpl extends JdbcTemplate implements ITipo_SaidaDAO {
 	}
 
 	public List<TipoSaidaVO> listaTodos() {
-		return null;
+		List<TipoSaidaVO> lista = null;
+		try {
+			lista = query(LIST, new BeanPropertyRowMapper<TipoSaidaVO>(TipoSaidaVO.class));
+			return lista;
+		} catch (Exception e) {
+			System.out.println("" + e.getCause());
+			return lista;
+		}
+
 	}
 }

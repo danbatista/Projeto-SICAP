@@ -10,23 +10,23 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class VisitanteDAOImpl extends JdbcTemplate implements IVisitanteDAO {
-	public final String INSERT = "INSERT INTO tblVisitante(DetID,VisSituacao,VisNome,VisApelido,"
+	private final static String INSERT = "INSERT INTO tblVisitante(DetID,VisSituacao,VisNome,VisApelido,"
 			+ "VisObservacao,VisLogradouro,VisNumero,VisComplemento,VisBairro,VisCEP,"
 			+ "VisCidade,VisEstado,PrtID,VisRG,VisCPF,VisCNH,VisReservista,VisCTPS,"
 			+ "VisTipo,VisDig01,VisDig02,VisStatusCarteira,VisTelefone)"
 			+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private final String UPDATE = "UPDATE tblVisitante SET DetID = ?, VisSituacao= ?, VisNome= ?,VisApelido= ? , "
+	private final static String UPDATE = "UPDATE tblVisitante SET DetID = ?, VisSituacao= ?, VisNome= ?,VisApelido= ? , "
 			+ "VisObservacao= ?, VisLogradouro= ?,VisNumero= ?,VisComplemento=?, VisBairro= ?, VisCEP= ?,"
 			+ " VisCidade= ?, VisEstado= ?, PrtID= ?, VisRG= ?, VisCPF= ?, VisCNH= ? ,VisReservista= ?, VisCTPS= ?,"
 			+ " VisTipo= ?, VisDig01= ?, VisDig02= ?, VisStatusCarteira= ?, VisTelefone= ?"
 			+ " WHERE VisID = ?";
-	private final String LISTBYID = "SELECT * FROM tblVisitante where VisID = ? ";
-	private final String INATIVE = "UPDATE tblVisitante SET VisSituacao= 0 WHERE VisID = ? ";
-	private final String LISTALL = "SELECT TOP 200 DetID,VisSituacao,VisNome,"
+	private final static String LISTBYID = "SELECT * FROM tblVisitante where VisID = ? ";
+	private final static String INATIVE = "UPDATE tblVisitante SET VisSituacao= 0 WHERE VisID = ? ";
+	private final static String LISTALL = "SELECT TOP 200 DetID,VisSituacao,VisNome,"
 			+ "VisApelido,VisObservacao,VisFoto,VisLogradouro,VisNumero,"
 			+ "VisComplemento,VisBairro, VisCEP,VisCidade,VisEstado,PrtID,"
 			+ "VisRG,VisCPF,VisTelefone from  tblVisitante ORDER BY VisNome ASC ";
-	private final String LISTPERSONALIZADA = "SELECT TOP 50 * from  tblVisitante where VisSituacao = 1 ORDER BY DetID ASC ;";
+	private final static String LISTPERSONALIZADA = "SELECT TOP 50 * from  tblVisitante where VisSituacao = 1 ORDER BY DetID ASC ;";
 
 	public VisitanteDAOImpl(DataSource dataSource) {
 		setDataSource(dataSource);

@@ -8,7 +8,7 @@ package br.net.sicap.sicap_business.dao;
 import br.net.sicap.sicap_business.vo.ClassificacaoCorVO;
 import java.util.List;
 
-public interface IClassificacaoPorCor
+public interface IClassificacaoPorCorDAO
 {
 
     public  boolean inserirClassCor(ClassificacaoCorVO classificacaocorvo);

@@ -37,7 +37,6 @@ public class UsuarioBOImpl implements IUsuarioBO {
 		// TODO Auto-generated method stub
 		UsuarioVO VO = new UsuarioVO();
 		VO = dao.autenticaUser(user);
-		System.out.println("Nome da merda do cara:"+VO.getName());
 		return VO;
 	}
 	

@@ -1,5 +1,7 @@
 package br.net.sicap.sicap_business.dao.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
 
@@ -17,11 +19,10 @@ import br.net.sicap.sicap_business.vo.VisitanteVO;
 
 public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 
-	protected final String INSERT = "INSERT INTO UCTabUsers(UCUserName,UCPassword, UCLogin, UCUserExpired,"
-			+ "UCEmail, UCPrivileged,UCInative) VALUES (?,?,?,?,?,?,?) ";
-	protected final String LIST = "Select * FROM UCTabUsers";
-
-	protected final String INACTIVE = "UPDATE UCTabUsers SET UCInative = 1 where UCIdUser = ?";
+	private final static String INSERT = "INSERT INTO UCTabUsers(UCUserName,UCPassword, UCLogin, UCUserExpired,"
+	  + "UCEmail, UCPrivileged,UCInative) VALUES (?,?,?,?,?,?,?) ";
+	private final static String LIST = "Select * FROM UCTabUsers";
+	private final static String INACTIVE = "UPDATE UCTabUsers SET UCInative = 1 where UCIdUser = ?";
 
 	public UsuarioDAOImpl() {
 		// TODO Auto-generated constructor stub
@@ -65,21 +66,34 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 
 	// Autenticacao de Usuarios
 	public UsuarioVO autenticaUser(UsuarioVO user) {
-		// TODO Auto-generated method stub
-		System.out.println(user.getUser());
-		System.out.println(user.getPassword());
-		String VERIFICA_AUTENTICACAO = "Select UCLogin as l, UCPassword as p FROM UCTabUsers where UCLogin = ? and UCPassword = ?";
 
-		final UsuarioVO vo = this.queryForObject(VERIFICA_AUTENTICACAO,
-				new Object[] { user.getUser(), user.getPassword() }, new int[] { Types.VARCHAR, Types.VARCHAR },
-				UsuarioVO.class);
-
+		String VERIFICA_AUTENTICACAO = "Select UCUserName, UCLogin, UCPassword FROM UCTabUsers where UCLogin = ? and UCPassword = ?";
 		/*
-		 * System.out.println(VERIFICA_AUTENTICACAO); for (UsuarioVO usuarioVO :
-		 * lista) { System.out.println("Retorno:>"+usuarioVO.getName());
-		 * BeanUtils.copyProperties(usuarioVO, user); }
+		 * final UsuarioVO vo = this.queryForObject(VERIFICA_AUTENTICACAO, new
+		 * Object[] { user.getUser(), user.getPassword() }, new int[] {
+		 * Types.VARCHAR, Types.VARCHAR }, UsuarioVO.class);
 		 */
-		return vo;
+		/*
+		 * List<UsuarioVO> lista = query(VERIFICA_AUTENTICACAO, new Object[] {
+		 * user.getUser(), user.getPassword() }, new int[] { Types.VARCHAR,
+		 * Types.VARCHAR }, new
+		 * BeanPropertyRowMapper<UsuarioVO>(UsuarioVO.class));
+		 */
+		UsuarioVO usuario = (UsuarioVO) this.queryForObject(VERIFICA_AUTENTICACAO,
+				new Object[] { user.getUser(), user.getPassword() }, new UserRowMapper());
+		System.out.println("Encontrado:" + usuario.getName());
+		return usuario;
+
 	}
 
+	public class UserRowMapper implements RowMapper {
+		// Mapear o Usuario
+		public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+			UsuarioVO user = new UsuarioVO();
+			user.setUser(rs.getString("UCLogin"));
+			user.setPassword(rs.getString("UCPassword"));
+			user.setName(rs.getString("UCUserName"));
+			return user;
+		}
+	}
 }

@@ -42,17 +42,14 @@ public class Autenticacao_Controller {
 		 ModelAndView modelAndView = new ModelAndView("logon");
 		UsuarioVO usuarioSend = new UsuarioVO();
 		UsuarioVO usuarioReceive = new UsuarioVO();
-		
-		
-		System.out.println("Usuario:" + CMD.getUser());
-		System.out.println("Senha:" + CMD.getPassword());
 	        if (!result.hasErrors()){
 	        	System.out.println("Entrou Não tem Erros! EBA!");
 	     			   
 				BeanUtils.copyProperties(CMD, usuarioSend);
 				usuarioReceive = bo.autenticaUser(usuarioSend);
-				 System.out.println(""+usuarioReceive.getName());
-	     if(!usuarioReceive.getUser().equals(null) && usuarioReceive.getPassword().equals(null)){
+				 System.out.println("Nome: Receiver"+usuarioReceive.getName());
+				 
+	     if(!(usuarioReceive.getUser().equals("") && usuarioReceive.getPassword().equals(""))){
 			   
 				session.setAttribute("usuarioLogado", usuarioReceive);
 				System.out.println("Usuario Autenticado com sucesso!");

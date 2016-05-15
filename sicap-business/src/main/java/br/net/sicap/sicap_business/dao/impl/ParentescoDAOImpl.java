@@ -3,16 +3,20 @@ package br.net.sicap.sicap_business.dao.impl;
 
 import br.net.sicap.sicap_business.dao.IParentescoDAO;
 import br.net.sicap.sicap_business.vo.ParentescoVO;
+import br.net.sicap.sicap_business.vo.TipoSaidaVO;
+
 import java.util.List;
 import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ParentescoDAOImpl extends JdbcTemplate implements IParentescoDAO {
-
-	private String INSERT;
-	private String DELETE; 
-	private String UPDATE; 
-	private String LIST;  
+//	[PrtParentesco] [PrtID]
+	private final static String INSERT = "INSERT INTO tblParentesco(PrtParentesco) VALUES (?)";
+	private final static String DELETE = ""; 
+	private final static String UPDATE = ""; 
+	private final static String LIST  = "SELECT * tblParentesco";  
 	 
 	public ParentescoDAOImpl() {
 	}
@@ -22,7 +26,8 @@ public class ParentescoDAOImpl extends JdbcTemplate implements IParentescoDAO {
 	}
 
 	public boolean inserirParentesco(ParentescoVO vo) {
-		return false;
+		this.update(INSERT, new Object[]{ vo.getPrtParentesco()});
+		return true;
 	}
 
 	public boolean alterarParentesco(ParentescoVO vo) {
@@ -33,7 +38,14 @@ public class ParentescoDAOImpl extends JdbcTemplate implements IParentescoDAO {
 		return false;
 	}
 
-	public List listaTodos() {
-		return null;
+	public List<ParentescoVO> listaTodos() {
+		List<ParentescoVO> lista = null;
+		try {
+			lista = query(LIST, new BeanPropertyRowMapper<ParentescoVO>(ParentescoVO.class));
+			return lista;
+		} catch (Exception e) {
+			System.out.println("" + e.getCause());
+			return lista;
+		}
 	}
 }

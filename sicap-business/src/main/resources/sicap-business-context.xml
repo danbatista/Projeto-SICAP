@@ -59,7 +59,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 		<property name="url"
-			value="jdbc:sqlserver://CLIENTE-HP\SQLEXPRESS;DataBaseName=BdAcesso2" />
+			value="jdbc:sqlserver://DANIEL-PC\SQLEXPRESS;DataBaseName=BdAcesso2" />
 		<property name="username" value="sicap" />
 		<property name="password" value="sicap" />
 	</bean>
