@@ -52,4 +52,10 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
+<!-- Configura tempo em que o usuario pode se manter logado no sistema  -->
+	<session-config>
+		<session-timeout>5</session-timeout>
+	</session-config>
+
 </web-app>

@@ -17,7 +17,7 @@
 	<bean id="IVisitanteBO" class="br.net.sicap.sicap_business.bo.impl.VisitanteBOImpl">
 		<!-- <constructor-arg ref="dataSource" /> -->
 	</bean>
-	<!-- Criacao dos DataSources para conexao com o banco de dados -->
+	
 	<bean id="VisitanteDAO" class="br.net.sicap.sicap_business.dao.impl.VisitanteDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
@@ -36,6 +36,16 @@
 	<bean id="TipoStatusDAO" class="br.net.sicap.sicap_business.dao.impl.Tipo_StatusDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
+	
+<!-- 	AUTENTICACAO BEANS -->
+
+     <bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
+	</bean>
+
+	<bean id="IUsuarioDAO" class="br.net.sicap.sicap_business.dao.impl.UsuarioDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+     
 
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

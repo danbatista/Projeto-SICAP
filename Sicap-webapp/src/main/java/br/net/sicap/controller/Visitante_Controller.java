@@ -22,12 +22,6 @@ public class Visitante_Controller {
 	@Autowired
 	public IVisitanteBO bo;
 
-	/*   Este método é o único em todos os cotroladores, não poderá ser repetido em nenhum    */
-	@RequestMapping(value = "/")
-	public ModelAndView index() {
-		final ModelAndView modelAndView = new ModelAndView("index");
-		return modelAndView;
-	}
 	
 
 	@ModelAttribute(value = "Visitante_Command")

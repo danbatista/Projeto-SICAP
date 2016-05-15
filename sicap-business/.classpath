@@ -28,6 +28,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/SourceAFIS/Bin/sourceafis.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cliente/Desktop/Free_Fingerprint_Verification_SDK/FreeFingerprintVerificationSDK/bin/Win32_x86/Nffv.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
