@@ -63,6 +63,7 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 		return null;
 	}
 
+	// Autenticacao de Usuarios
 	public UsuarioVO autenticaUser(UsuarioVO user) {
 		// TODO Auto-generated method stub
 		System.out.println(user.getUser());
