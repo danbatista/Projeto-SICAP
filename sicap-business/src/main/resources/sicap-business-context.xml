@@ -72,97 +72,32 @@
 		<constructor-arg ref="dataSource" />
 	</bean>
 
-	<!-- IDigitalDAO BEANS -->
 
-	<bean id="IDigitalBO" class="br.net.sicap.sicap_business.bo.impl.DigitalBOImpl">
-	</bean>
-	<bean id="IDigitalDAO" class="br.net.sicap.sicap_business.dao.impl.DigitalDAOImpl">
-		<constructor-arg ref="dataSource" />
-	</bean>
+	<!-- IParentescoDAO BEANS -->
 
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IHistoricoSaidaBO" class="br.net.sicap.sicap_business.bo.impl.HistoricoSaidaBOImpl">
-	</bean>
-	<bean id="IHistoricoSaidaDAO"
-		class="br.net.sicap.sicap_business.dao.impl.HistoricoSaidaDAOImpl">
-		<constructor-arg ref="dataSource" />
-	</bean>
-
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
-	</bean>
-	<bean id="IHistoricoStatusDAO"
-		class="br.net.sicap.sicap_business.dao.impl.HistoricoStatusDAOImpl.java     ">
-		<constructor-arg ref="dataSource" />
-	</bean>
-
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
-	</bean>
-	<bean id="IHistoricoVisitaDAO"
-		class="br.net.sicap.sicap_business.dao.impl.HistoricoVisitaDAOImpl.java     ">
-		<constructor-arg ref="dataSource" />
-	</bean>
-
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
-	</bean>
-	<bean id="IParametrosDAO"
-		class="br.net.sicap.sicap_business.dao.impl.ParametrosDAOImpl.java          ">
-		<constructor-arg ref="dataSource" />
-	</bean>
-
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
+	<bean id="IParentescoBO" class="br.net.sicap.sicap_business.bo.impl.ParentescoBOImpl">
 	</bean>
 	<bean id="IParentescoDAO"
-		class="br.net.sicap.sicap_business.dao.impl.ParentescoDAOImpl.java          ">
+		class="br.net.sicap.sicap_business.dao.impl.ParentescoDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
 
-	<!-- AUTENTICACAO BEANS -->
+	<!-- IPavilhaoBO BEANS -->
 
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
+	<bean id="IPavilhaoBO" class="br.net.sicap.sicap_business.bo.impl.PavilhaoBOImpl">
 	</bean>
 
 	<bean id="IPavilhaoDAO"
-		class="br.net.sicap.sicap_business.dao.impl.PavilhaoDAOImpl.java            ">
+		class="br.net.sicap.sicap_business.dao.impl.PavilhaoDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
-	<!-- AUTENTICACAO BEANS -->
+	<!-- IRestricoesDAO BEANS -->
 
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
+	<bean id="IRestricoesBO" class="br.net.sicap.sicap_business.bo.impl.RestricoesBOImpl">
 	</bean>
 
 	<bean id="IRestricoesDAO"
-		class="br.net.sicap.sicap_business.dao.impl.RestricoesDAOImpl.java          ">
-		<constructor-arg ref="dataSource" />
-	</bean>
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
-	</bean>
-
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
-	</bean>
-	<bean id="ISaidaAdicionalDAO"
-		class="br.net.sicap.sicap_business.dao.impl.SaidaAdicionalDAOImpl.java      ">
-		<constructor-arg ref="dataSource" />
-	</bean>
-	<!-- AUTENTICACAO BEANS -->
-
-	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
-	</bean>
-
-	<bean id="ITipo_SaidaDAO"
-		class="br.net.sicap.sicap_business.dao.impl.Tipo_SaidaDAOImpl.java          ">
+		class="br.net.sicap.sicap_business.dao.impl.RestricoesDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
 
@@ -179,7 +114,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 		<property name="url"
-			value="jdbc:sqlserver://DANIEL-PC\SQLEXPRESS;DataBaseName=BdAcesso2" />
+			value="jdbc:sqlserver://CLIENTE-HP\SQLEXPRESS;DataBaseName=BdAcesso2" />
 		<property name="username" value="sicap" />
 		<property name="password" value="sicap" />
 	</bean>

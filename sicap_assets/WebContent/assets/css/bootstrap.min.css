@@ -1,5 +1,3 @@
-
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 	display: block;
 }
@@ -366,9 +364,8 @@ ul {
 ol {
 	list-style: decimal;
 }
-#li {
-	line-height: 0px;
-	list-style-type: none;
+li {
+	line-height: 18px;
 }
 ul.unstyled, ol.unstyled {
 	margin-left: 0;
@@ -2571,7 +2568,6 @@ filter:progid:dximagetransform.microsoft.gradient(enabled=false);
 	font-weight: 200;
 	line-height: 1;
 	color: #ffffff;
-	background: #3B8686;
 }
 .navbar .navbar-text {
 	margin-bottom: 0;

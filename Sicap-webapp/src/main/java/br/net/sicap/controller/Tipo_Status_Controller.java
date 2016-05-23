@@ -28,9 +28,16 @@ public class Tipo_Status_Controller {
 		return new Tipo_Status_Command();
 	}
 	
+	@RequestMapping(value = "listTpSts")
+	public ModelAndView list(){
+		ModelAndView modelAndView = new ModelAndView("TipoStatus_list");
+		modelAndView.addObject("listaTpSts",bo.listaTodos());
+		return modelAndView;
+	}
+	
 	@RequestMapping(value = "deleteTpSts")
 	public ModelAndView inativa(@RequestParam(value="id") int id){
-		ModelAndView modelAndView = new ModelAndView("TipoStatusHome");
+		ModelAndView modelAndView = new ModelAndView("TipoStatus_list");
 		bo.deletarTipoStatus(id);
 		modelAndView.addObject("listaTpSts",bo.listaTodos());
 		return modelAndView;

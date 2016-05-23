@@ -23,14 +23,13 @@ public class Autenticacao_Controller {
 	@Autowired
 	public IUsuarioBO bo;
 	
-	/*   Este método é o único em todos os cotroladores, não poderá ser repetido em nenhum    */
+	
 	@RequestMapping(value = "/")
 	public ModelAndView index() {
 		final ModelAndView modelAndView = new ModelAndView("logon");
 		return modelAndView;
 	}
-
-
+	
 	@ModelAttribute(value = "Autenticacao_Command")
 	public Autenticacao_Command getAutenticacao_CommandObject() {
 		return new Autenticacao_Command();
@@ -43,11 +42,10 @@ public class Autenticacao_Controller {
 		UsuarioVO usuarioSend = new UsuarioVO();
 		UsuarioVO usuarioReceive = new UsuarioVO();
 	        if (!result.hasErrors()){
-	        	System.out.println("Entrou Não tem Erros! EBA!");
-	     			   
+	        		   
 				BeanUtils.copyProperties(CMD, usuarioSend);
 				usuarioReceive = bo.autenticaUser(usuarioSend);
-				 System.out.println("Nome: Receiver"+usuarioReceive.getName());
+				 System.out.println("Nome:"+usuarioReceive.getName());
 				 
 	     if(!(usuarioReceive.getUser().equals("") && usuarioReceive.getPassword().equals(""))){
 			   
