@@ -18,24 +18,19 @@ Bootstrap Admin Template by EGrappler.com
 	padding: 12px 0;
 	margin: 0 .9% 1em;
 	vertical-align: top;	
-	
 	text-decoration: none;
-	
-	background: #f9f6f1;
-	
+	background: rgb(45, 78, 91);
 	border-radius: 5px;
 }
-
 .shortcuts .shortcut .shortcut-icon {
 	margin-top: .25em;
 	margin-bottom: .25em;
-	
 	font-size: 32px;
-	color: #545454;
+	color: #fff;
 }
 
 .shortcuts .shortcut:hover {
-	background: #730909;
+	background: rgb(96, 166, 193);
 }
 
 .shortcuts .shortcut:hover span{
@@ -50,7 +45,7 @@ Bootstrap Admin Template by EGrappler.com
 	display: block;
 	
 	font-weight: 400;
-	color: #545454;
+	color: #fff;
 }
 
 
