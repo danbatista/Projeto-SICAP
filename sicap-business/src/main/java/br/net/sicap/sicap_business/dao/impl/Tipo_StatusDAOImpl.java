@@ -16,7 +16,7 @@ public class Tipo_StatusDAOImpl extends JdbcTemplate implements ITipo_StatusDAO 
 	private final static String INSERT = "INSERT INTO tblTipoStatus(TpStsDescricao, TpStsLiberado) VALUES (?,?)";
 	private final static String DELETE = "DELETE FROM tblTipoStatus WHERE TpStsID = ?";
 	private final static String UPDATE = "UPDATE tblTipoStatus SET TpStsDescricao = ? , TpStsLiberado = ? WHERE TpStsID= ? ";
-	private final static String LIST = "SELECT TOP 200 * FROM tblTipoStatus";
+	private final static String LIST = "SELECT  * FROM tblTipoStatus";
 
 	public Tipo_StatusDAOImpl() {
 	}

@@ -1,6 +1,7 @@
 package br.net.sicap.sicap_business.bo.impl;
 
 import java.lang.reflect.Constructor;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,11 +21,23 @@ public class CelaBOImpl implements ICelaBO{
 	
 	
 	public boolean insert(CelaVO vo){
-		 if(dao.insert(vo));
-		return false;
+		 return dao.insert(vo);
 	}
-	public boolean inativaCela(int id){
-	   if(dao.inativaCela(id));
-		return false;
+
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return dao.delete(id);
+	}
+
+
+	public boolean update(CelaVO vO) {
+		// TODO Auto-generated method stub
+		return dao.update(vO);
+	}
+
+
+	public List<CelaVO> list() {
+		// TODO Auto-generated method stub
+		return dao.list();
 	}
 }

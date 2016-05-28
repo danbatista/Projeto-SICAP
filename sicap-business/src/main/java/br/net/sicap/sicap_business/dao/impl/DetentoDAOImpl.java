@@ -23,7 +23,7 @@ public class DetentoDAOImpl extends JdbcTemplate implements IDetentoDAO {
 			+ "DetLimiteSaidas = ?, DetClassificacaoCor = ?,DetDataPrisao = ?, DetNomePai = ?,DetNomeMae = ?,DetDig01 = ?,"
 			+ "DetDig02 = ?, PavID = ?, CelID = ? WHERE DetID = ? ";
 	private final static String INATIVE = "UPDATE tblDetento SET DetSituacao = 0 WHERE DetID = ?";
-	private final static String LISTALL = "SELECT TOP 200 * FROM tblDetento";
+	private final static String LISTALL = "SELECT * FROM tblDetento";
 	private final static String LISTID = "SELECT * FROM tblDetento WHERE DetID = ?";
 
 	public DetentoDAOImpl(DataSource dataSource) {
