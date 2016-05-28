@@ -29,7 +29,7 @@ public class Tipo_StatusBOImpl implements ITipo_StatusBO {
 
 	public boolean deletarTipoStatus(int cod) {
 		// TODO Auto-generated method stub
-		return deletarTipoStatus(cod);
+		return dao.deletarTipoStatus(cod);
 	}
 
 	public List<TipoStatusVO> listaTodos() {

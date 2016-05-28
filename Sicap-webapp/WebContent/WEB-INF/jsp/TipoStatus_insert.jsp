@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cadastro de Visitantes</title>
+<title>Cadastro de Status</title>
 </head>
 <body>
 

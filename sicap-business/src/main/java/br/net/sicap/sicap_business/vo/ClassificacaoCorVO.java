@@ -13,15 +13,6 @@ public class ClassificacaoCorVO
     {
     }
 
-    public Integer getID()
-    {
-        return ID;
-    }
-
-    public void setID(Integer ID)
-    {
-        this.ID = ID;
-    }
 
     public String getDescricao()
     {
@@ -43,7 +34,16 @@ public class ClassificacaoCorVO
         this.Cor = Cor;
     }
 
-    private Integer ID;
+    public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	private Integer id;
     private String Descricao;
     private String Cor;
 }

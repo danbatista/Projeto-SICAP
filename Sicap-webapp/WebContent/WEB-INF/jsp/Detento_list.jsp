@@ -136,8 +136,7 @@
 				<div class="widget widget-table action-table">
 					<!-- /widget-header -->
 					<div class="widget-content">
-						<table class="table table-striped table-bordered" 
-						class="display dtable" id="tabelaDetento"  data-table-ajax="">
+						<table class="table table-striped table-bordered">
 							<thead>
 								<tr>
 									<th>Situação</th>

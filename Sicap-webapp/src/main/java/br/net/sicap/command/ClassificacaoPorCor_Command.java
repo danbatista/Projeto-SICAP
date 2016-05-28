@@ -8,33 +8,39 @@ public class ClassificacaoPorCor_Command {
 	
 	private int id;
 	@NotEmpty
-	private String descricao;
+	private String Descricao;
 	@NotEmpty
-	private String cor;
+	private String Cor;
 	
-	public ClassificacaoPorCor_Command(int id, String descricao, String cor) {
-		super();
-		this.id = id;
-		this.descricao = descricao;
-		this.cor = cor;
+	public ClassificacaoPorCor_Command() {
+
 	}
+
+
 	public int getId() {
 		return id;
 	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
 	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public String getCor() {
-		return cor;
-	}
-	public void setCor(String cor) {
-		this.cor = cor;
+		return Descricao;
 	}
 
+	public void setDescricao(String descricao) {
+		Descricao = descricao;
+	}
+
+	public String getCor() {
+		return Cor;
+	}
+
+	public void setCor(String cor) {
+		Cor = cor;
+	}
+	
 }

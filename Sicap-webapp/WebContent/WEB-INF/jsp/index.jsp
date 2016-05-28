@@ -33,23 +33,17 @@
 					class="icon-bar"></span> <span class="icon-bar"></span>
 				</a>
 				<!--  <a class="brand" href="index.html">SICAP </a> -->
-				<ul class = "menu">
-					<li id="li"><a class="" href="home">Visitantes
-					</a></li>
-					<li id="li"><a class="" href="index.html">Detentos
-					</a></li>
-					<li id="li"><a class="" href="index.html">Digitais
-					</a></li>
+				<ul class="menu">
+					<li id="li"><a class="" href="home">Visitantes </a></li>
+					<li id="li"><a class="" href="index.html">Detentos </a></li>
+					<li id="li"><a class="" href="index.html">Digitais </a></li>
 					<li id="li"><a class="" href="index.html">Históricos
 							entradas/saidas </a></li>
 					<li id="li"><a class="" href="index.html">Histórico
 							visitas </a></li>
-					<li id="li"><a class="" href="index.html">Restrições
-					</a></li>
-					<li id="li"><a class="" href="index.html">Digitais
-					</a></li>
-					<li id="li"><a class="" href="index.html">Associação</a>
-					</li>
+					<li id="li"><a class="" href="index.html">Restrições </a></li>
+					<li id="li"><a class="" href="index.html">Digitais </a></li>
+					<li id="li"><a class="" href="index.html">Associação</a></li>
 				</ul>
 
 
@@ -67,15 +61,13 @@
 					</a></li>
 					<li><a href="reports.html"><i class="icon-list-alt"></i><span>Relatório</span>
 					</a></li>
-					<li><a href="guidely.html"><i class="icon-facetime-video"></i><span>App
-								Tour</span> </a></li>
 					<li><a href="visitanteHome"><i class="icon-bar-chart"></i><span>Administração</span>
 					</a></li>
 					<li><a href="shortcodes.html"><i class="icon-code"></i><span>Agendamento</span>
 					</a></li>
 					<li class="dropdown"><a href="javascript:;"
 						class="dropdown-toggle" data-toggle="dropdown"> <i
-							class="icon-long-arrow-down"></i><span>Drops</span> <b
+							class="icon-long-arrow-down"></i><span>Mais Opções</span> <b
 							class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="icons.html">Icons</a></li>
@@ -177,7 +169,7 @@
 		</div>
 		<!-- /main-inner -->
 
-		
+
 	</div>
 	<!-- /main -->
 
@@ -186,16 +178,16 @@
 	<!-- Le javascript
 ================================================== -->
 	<SCRIPT>
-function inativa(){
-decisao = confirm("Você deseja realmente inativar esse visitante?");
-if (decisao){
-	alert("Visitante inativado com sucesso!");
-   return true;
-} else {
-    return false;
-}
-};
-</SCRIPT>
+		function inativa() {
+			decisao = confirm("Você deseja realmente inativar esse visitante?");
+			if (decisao) {
+				alert("Visitante inativado com sucesso!");
+				return true;
+			} else {
+				return false;
+			}
+		};
+	</SCRIPT>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="/sicap_assets/assets/js/jquery-1.7.2.min.js"></script>
 	<script src="/sicap_assets/assets/js/excanvas.min.js"></script>

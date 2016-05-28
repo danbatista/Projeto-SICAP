@@ -17,14 +17,14 @@
 	<bean id="IVisitanteBO" class="br.net.sicap.sicap_business.bo.impl.VisitanteBOImpl">
 		<!-- <constructor-arg ref="dataSource" /> -->
 	</bean>
-	<!-- Criacao dos DataSources para conexao com o banco de dados -->
+
 	<bean id="VisitanteDAO" class="br.net.sicap.sicap_business.dao.impl.VisitanteDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
 	<!-- DETENTO BEANS -->
 	<bean id="IDetentoBO" class="br.net.sicap.sicap_business.bo.impl.DetentoBOImpl">
 	</bean>
-	
+
 	<bean id="DetentoDAO" class="br.net.sicap.sicap_business.dao.impl.DetentoDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
@@ -37,6 +37,71 @@
 		<constructor-arg ref="dataSource" />
 	</bean>
 
+	<!-- AUTENTICACAO BEANS -->
+
+	<bean id="IUsuarioBO" class="br.net.sicap.sicap_business.bo.impl.UsuarioBOImpl">
+	</bean>
+
+	<bean id="IUsuarioDAO" class="br.net.sicap.sicap_business.dao.impl.UsuarioDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- AUTENTICACAO BEANS -->
+
+	<bean id="ICelaBO" class="br.net.sicap.sicap_business.bo.impl.CelaBOImpl">
+	</bean>
+	<bean id="ICelaDAO" class="br.net.sicap.sicap_business.dao.impl.CelaDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- IClassificacaoPorCorBO BEANS -->
+
+	<bean id="IClassificacaoPorCorBO"
+		class="br.net.sicap.sicap_business.bo.impl.ClassificacaoPorCorBOImpl">
+	</bean>
+	<bean id="IClassificacaoPorCorDAO"
+		class="br.net.sicap.sicap_business.dao.impl.ClassificacaoPorCorDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- IDetEnderecoDAO BEANS -->
+
+	<bean id="IDetEnderecoBO" class="br.net.sicap.sicap_business.bo.impl.DetEnderecoBOImpl">
+	</bean>
+	<bean id="IDetEnderecoDAO" class="br.net.sicap.sicap_business.dao.impl.DetEnderecoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+
+	<!-- IParentescoDAO BEANS -->
+
+	<bean id="IParentescoBO" class="br.net.sicap.sicap_business.bo.impl.ParentescoBOImpl">
+	</bean>
+	<bean id="IParentescoDAO"
+		class="br.net.sicap.sicap_business.dao.impl.ParentescoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- IPavilhaoBO BEANS -->
+
+	<bean id="IPavilhaoBO" class="br.net.sicap.sicap_business.bo.impl.PavilhaoBOImpl">
+	</bean>
+
+	<bean id="IPavilhaoDAO"
+		class="br.net.sicap.sicap_business.dao.impl.PavilhaoDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- IRestricoesDAO BEANS -->
+
+	<bean id="IRestricoesBO" class="br.net.sicap.sicap_business.bo.impl.RestricoesBOImpl">
+	</bean>
+
+	<bean id="IRestricoesDAO"
+		class="br.net.sicap.sicap_business.dao.impl.RestricoesDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<constructor-arg ref="dataSource" />
@@ -46,13 +111,23 @@
 
 
 	<!-- PRD DataSource (assign PRD database from another environment) -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<property name="url"
-			value="jdbc:sqlserver://DANIEL-PC\SQLEXPRESS;DataBaseName=BdAcesso2" />
-		<property name="username" value="sicap" />
-		<property name="password" value="sicap" />
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!-- 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" /> -->
+<!-- 		<property name="url" -->
+<!-- 			value="jdbc:sqlserver://CLIENTE-HP\SQLEXPRESS;DataBaseName=BdAcesso2" /> -->
+<!-- 		<property name="username" value="sicap" /> -->
+<!-- 		<property name="password" value="sicap" /> -->
+<!-- 	</bean> -->
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/BdAcesso2" />
+		<property name="username" value="postgres" />
+		<property name="password" value="admin" />
 	</bean>
+
+
+
 
 
 </beans>
