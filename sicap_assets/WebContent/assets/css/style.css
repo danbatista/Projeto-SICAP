@@ -1266,7 +1266,9 @@ color: #333;
 }
 
 
-
+.widget-content{
+	min-height: 300px;
+}
 
 
 

@@ -73,15 +73,14 @@
 
 					<div class="field">
 						<label for="user">Usuário</label>
-						<form:input type="text" id="user" path="user" value=""
-							placeholder="Username" class="login username-field" />
-					 <form:errors path="user" />
+						<form:input type="text" id="user" path="UCUserName" value="" placeholder="Username" class="login username-field" />
+					 <form:errors path="UCUserName" />
 					</div>
 					<!-- /field -->
 
 					<div class="field">
 						<label for="password">Senha</label>
-						<form:input type="password" id="password" path="password" value=""
+						<form:input type="password" id="password" path="UCPassword" value=""
 							placeholder="Password" class="login password-field" />
 					</div>
 					<!-- /password -->

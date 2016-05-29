@@ -1,151 +1,255 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cadastro de Visitantes</title>
-</head>
-<body>
+<%@ page contentType="text/html; charset=UTF-8" %>
+	
+<div class="span12">
+	<div class="widget">
+		<div class="widget-header">
+			<i class="icon-user"></i>
+  			<h3>Visitantes</h3>
+	  	</div>	
+	  	
+	  	<div class="widget-content">
+	  		<div class="tabbable">
+	  			<ul class="nav nav-tabs">
+	  				<li class="active">
+	  					<a href="#new" data-toggle="tab">Novo</a>
+					</li>
+					<li class="">
+	  					<a href="#update" data-toggle="tab">Atualizar</a>
+					</li>
+					<li class="">
+	  					<a href="#list" data-toggle="tab">Listar</a>
+					</li>
+					<li class="">
+	  					<a href="#remove" data-toggle="tab">Remover</a>
+					</li>
+	  			</ul>
+	  			<br/>
+	  			<div class="tab-content">
+	  				<div class="tab-pane active" id="new">
+						<form:form id="visitanteForm" action="sendFormInsertVisitante" class="form form-horizontal" commandName="Visitante_Command">
+							<fieldset>
+							<div class="control-group">
+								<label class="control-label" for="det-id">Detento ID</label>
+								<div class="controls">
+									<form:input id="det-id" path="DetID" size="30"  class="span6" placeholder="0" type="text"/>
+									<form:errors path="DetID" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="situation">Situação</label>
+								<div class="controls">
+									<form:input id="situation" path="VisSituacao" size="30"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisSituacao" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="name">Nome</label>
+								<div class="controls">
+									<form:input id="name" path="VisNome" size="30"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisNome" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="nickname">Apelido</label>
+								<div class="controls">
+									<form:input id="nickname" path="VisApelido" size="30"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisApelido" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="obs">Observação</label>
+								<div class="controls">
+									<form:input id="obs" path="VisObservacao" size="30"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisObservacao" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="foto">Foto</label>
+								<div class="controls">
+									<form:input id="foto" path="VisFoto"  class="span6" type="file"/>
+									<form:errors path="VisFoto" cssClass="error" />
+								</div>
+							</div>
+							
+							
+							<div class="control-group">
+								<label class="control-label" for="street">Logradouro</label>
+								<div class="controls">
+									<form:input id="street" path="VisLogradouro"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisLogradouro" cssClass="error" />
+								</div>
+							</div>
 
-	<form:form action="sendFormInsertVisitante" class="form"
-		commandName="Visitante_Command">
-		<div class="field">
-			Detento ID:
-			<form:input path="DetID" size="30" />
-		</div>
-		<form:errors path="DetID" cssClass="error" />
-		<div class="field">
-			Situacao:
-			<form:input path="VisSituacao" size="30" />
-		</div>
-		<form:errors path="VisSituacao" cssClass="error" />
-		<div class="field">
-			Nome:
-			<form:input path="VisNome" size="30" />
-		</div>
-		<form:errors path="VisNome" cssClass="error" />
-		<div class="field">
-			apelido:
-			<form:input path="VisApelido" size="30" />
-		</div>
-		<form:errors path="VisApelido" cssClass="error" />
-		<div class="field">
-			VisObservacao:
-			<form:input path="VisObservacao" size="30" />
-		</div>
-		<form:errors path="VisObservacao" cssClass="error" />
-		<div class="field">
-			VisFoto:
-			<form:input path="VisFoto" size="30" />
-		</div>
-		<form:errors path="VisFoto" cssClass="error" />
-		<div class="field">
-			VisLogradouro:
-			<form:input path="VisLogradouro" size="30" />
-		</div>
-		<form:errors path="VisLogradouro" cssClass="error" />
-		<div class="field">
-			VisNumero:
-			<form:input path="VisNumero" size="30" />
-		</div>
-		<form:errors path="VisNumero" cssClass="error" />
-		<div class="field">
-			VisComplemento:
-			<form:input path="VisComplemento" size="30" />
-		</div>
-		<form:errors path="VisComplemento" cssClass="error" />
-		<div class="field">
-			VisBairro:
-			<form:input path="VisBairro" size="30" />
-		</div>
-		<form:errors path="VisBairro" cssClass="error" />
-		<div class="field">
-			VisCEP:
-			<form:input path="VisCEP" size="30" />
-		</div>
-		<form:errors path="VisCEP" cssClass="error" />
-		<div class="field">
-			VisCidade:
-			<form:input path="VisCidade" size="30" />
-		</div>
-		<form:errors path="VisCidade" cssClass="error" />
-		<div class="field">
-			VisEstado:
-			<form:input path="VisEstado" size="30" />
-		</div>
-		<form:errors path="VisEstado" cssClass="error" />
 
-		<div class="field">
-			PrtID:
-			<form:input path="PrtID" size="30" />
+							<div class="control-group">
+								<label class="control-label" for="number">Número</label>
+								<div class="controls">
+									<form:input id="number" path="VisNumero"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisNumero" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="complement">Complemento</label>
+								<div class="controls">
+									<form:input id="complement" path="VisComplemento"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisComplemento" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="neightborhood">Bairro</label>
+								<div class="controls">
+									<form:input id="neightborhood" path="VisBairro"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisBairro" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="zipCode">CEP</label>
+								<div class="controls">
+									<form:input id="zipCode" path="VisCEP"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisCEP" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="city">Cidade</label>
+								<div class="controls">
+									<form:input id="city" path="VisCidade"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisCidade" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="state">Estado</label>
+								<div class="controls">
+									<form:input id="state" path="VisEstado"  class="span6" placeholder="" type="text"/>
+									<form:errors path="VisEstado" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="prtId">PrtID</label>
+								<div class="controls">
+									<form:input id="prtId" path="PrtID"  class="span6" placeholder="" type="text"/>
+									<form:errors path="PrtID" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="rg">RG</label>
+								<div class="controls">
+									<form:input id="rg" path="VisRG"  class="span6" size="30" placeholder="123456 SSP-XX" type="text"/>
+									<form:errors path="VisRG" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="cpf">CPF</label>
+								<div class="controls">
+									<form:input id="cpf" path="VisCPF"  class="span6" size="30" placeholder="123.456.789-00" type="text"/>
+									<form:errors path="VisCPF" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="cnh">CNH</label>
+								<div class="controls">
+									<form:input id="cnh" path="VisCNH"  class="span6" size="30" placeholder="" type="text"/>
+									<form:errors path="VisCNH" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="militaryNumber">Reservista</label>
+								<div class="controls">
+									<form:input id="militaryNumber" path="VisReservista"  class="span6" size="30" placeholder="" type="text"/>
+									<form:errors path="VisReservista" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="ctps">CTPS</label>
+								<div class="controls">
+									<form:input id="ctps" path="VisCTPS"  class="span6" size="30" placeholder="" type="text"/>
+									<form:errors path="VisCTPS" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="bornDate">Data de Nascimento</label>
+								<div class="controls">
+									<form:input id="bornDate" path="VisNascimento"  class="span6" size="30" placeholder="01/01/2016" pattern="dd/MM/aaaa" type="text"/>
+									<form:errors path="VisNascimento" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="type">Tipo</label>
+								<div class="controls">
+									<form:input id="type" path="VisTipo"  class="span6" size="30" type="text"/>
+									<form:errors path="VisTipo" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="dig1">Dig01</label>
+								<div class="controls">
+									<form:input id="dig1" path="VisDig01"  class="span6" size="30" type="text"/>
+									<form:errors path="VisDig01" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="dig2">Dig02</label>
+								<div class="controls">
+									<form:input id="dig2" path="VisDig02"  class="span6" size="30" type="text"/>
+									<form:errors path="VisDig02" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="statusCar">Status Carteira</label>
+								<div class="controls">
+									<form:input id="statusCar" path="VisStatusCarteira"  class="span6" size="30" type="text"/>
+									<form:errors path="VisStatusCarteira" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label" for="phone">Telefone</label>
+								<div class="controls">
+									<form:input id="phone" path="VisTelefone"  class="span6" size="30" type="tel"/>
+									<form:errors path="VisTelefone" cssClass="error" />
+								</div>
+							</div>
+							
+							<div class="form-actions">
+								<button class="btn btn-primary" type="submit">Cadastrar</button>
+								<button class="btn clean-fields" type="submit" onclick="javascript:void(0);return false;">Limpar</button>
+							</div>
+							</fieldset>
+						</form:form>
+					</div>
+	  				<div class="tab-pane" id="update">
+	  				
+	  				</div>
+	  				<div class="tab-pane" id="list">
+	  				
+	  				</div>
+	  				<div class="tab-pane" id="remove">
+	  				
+	  				</div>
+	  			</div>
+			
+			</div>
 		</div>
-		<form:errors path="PrtID" cssClass="error" />
-
-		<div class="field">
-			VisRG:
-			<form:input path="VisRG" size="30" />
-		</div>
-		<form:errors path="VisRG" cssClass="error" />
-
-		<div class="field">
-			VisCPF:
-			<form:input path="VisCPF" size="30" />
-		</div>
-		<form:errors path="VisCPF" cssClass="error" />
-
-		<div class="field">
-			VisCNH:
-			<form:input path="VisCNH" size="30" />
-		</div>
-		<form:errors path="VisCNH" cssClass="error" />
-
-		<div class="field">
-			VisReservista:
-			<form:input path="VisReservista" size="30" />
-		</div>
-		<form:errors path="VisReservista" cssClass="error" />
-
-		<div class="field">
-			VisCTPS:
-			<form:input path="VisCTPS" size="30" />
-		</div>
-		<form:errors path="VisCTPS" cssClass="error" />
-
-		<div class="field">
-			VisNascimento:
-			<form:input path="VisNascimento" size="30" />
-		</div>
-		<form:errors path="VisNascimento" cssClass="error" />
-
-		<div class="field">
-			VisTipo:
-			<form:input path="VisTipo" size="30" />
-		</div>
-		<form:errors path="VisTipo" cssClass="error" />
-
-		<div class="field">
-			VisDig01:
-			<form:input path="VisDig01" size="30" />
-		</div>
-		<form:errors path="VisDig01" cssClass="error" />
-		<div class="field">
-			VisDig02:
-			<form:input path="VisDig02" size="30" />
-		</div>
-		<form:errors path="VisDig02" cssClass="error" />
-		<div class="field">
-			VisStatusCarteira:
-			<form:input path="VisStatusCarteira" size="30" />
-		</div>
-		<form:errors path="VisStatusCarteira" cssClass="error" />
-		<div class="field">
-			VisTelefone:
-			<form:input path="VisTelefone" size="30" />
-		</div>
-		<form:errors path="VisTelefone" cssClass="error" />
-		<input class="button" type="submit" value="Cadastrar" />
-	</form:form>
-</body>
-</html>
+	</div>
+</div>
