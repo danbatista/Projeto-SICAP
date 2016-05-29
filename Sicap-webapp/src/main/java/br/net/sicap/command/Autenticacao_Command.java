@@ -6,94 +6,78 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Autenticacao_Command {
      
-	
-	private int ID;
-	private String Name;
+	private int UCIdUser;
 	@NotEmpty
-	private String user;
+	private String UCLogin;
+	private String UCUserName;
+	private String UCPASSEXPIRED;
+	private String UCEmail;
+	private String UCPrivileged;
 	@NotEmpty
 	@Size(min = 12, max = 20)
-	private String password;
-	private int passExpired;
-	private String email;
-	private String privilegio;
-	private int inactive;
+	private String UCPassword;
+	private String UCInative;
 	private Boolean flag_logon;
 	
+	public int getUCIdUser() {
+		return UCIdUser;
+	}
+	public void setUCIdUser(int uCIdUser) {
+		UCIdUser = uCIdUser;
+	}
+	public String getUCLogin() {
+		return UCLogin;
+	}
+	public void setUCLogin(String uCLogin) {
+		UCLogin = uCLogin;
+	}
+	public String getUCUserName() {
+		return UCUserName;
+	}
+	public void setUCUserName(String uCUserName) {
+		UCUserName = uCUserName;
+	}
+	public String getUCPASSEXPIRED() {
+		return UCPASSEXPIRED;
+	}
+	public void setUCPASSEXPIRED(String uCPASSEXPIRED) {
+		UCPASSEXPIRED = uCPASSEXPIRED;
+	}
+	public String getUCEmail() {
+		return UCEmail;
+	}
+	public void setUCEmail(String uCEmail) {
+		UCEmail = uCEmail;
+	}
+	public String getUCPrivileged() {
+		return UCPrivileged;
+	}
+	public void setUCPrivileged(String uCPrivileged) {
+		UCPrivileged = uCPrivileged;
+	}
+	public String getUCPassword() {
+		return UCPassword;
+	}
+	public void setUCPassword(String uCPassword) {
+		UCPassword = uCPassword;
+	}
+	public String getUCInative() {
+		return UCInative;
+	}
+	public void setUCInative(String uCInative) {
+		UCInative = uCInative;
+	}
+	public Boolean getFlag_logon() {
+		return flag_logon;
+	}
+	public void setFlag_logon(Boolean flag_logon) {
+		this.flag_logon = flag_logon;
+	}
+
 	
 	public Autenticacao_Command() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getID() {
-		return ID;
-	}
-
-	public void setID(int iD) {
-		ID = iD;
-	}
-
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-	public String getName() {
-		return Name;
-	}
-
-	public void setName(String name) {
-		Name = name;
-	}
-
-	public int getPassExpired() {
-		return passExpired;
-	}
-
-	public void setPassExpired(int i) {
-		this.passExpired = i;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPrivilegio() {
-		return privilegio;
-	}
-
-	public void setPrivilegio(String privilegio) {
-		this.privilegio = privilegio;
-	}
-
-	public int getInactive() {
-		return inactive;
-	}
-
-	public void setInactive(int inactive) {
-		this.inactive = inactive;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Boolean getFlag_logon() {
-		return flag_logon;
-	}
-
-	public void setFlag_logon(Boolean flag_logon) {
-		this.flag_logon = flag_logon;
-	}
+	
 }

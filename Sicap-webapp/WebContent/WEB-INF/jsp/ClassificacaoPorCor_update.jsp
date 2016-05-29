@@ -26,9 +26,9 @@
 		<form:errors path="descricao" cssClass="error" />
 		<div class="field">
 			Cor:
-			<form:input path="cor" size="30"
-				value="${update.cor}" />
-			<form:errors path="cor" cssClass="error" />
+			<input id="background-color" value="${update.cor}" type="color" onchange="javascript:document.getElementById('chosen-color').value = document.getElementById('background-color').value;">
+			<form:input id ="chosen-color" type="hidden" path="cor" maxlength="1" />
+		 <form:errors path="cor" cssClass="error" />
 		</div>
 		<input class="button" type="submit" value="Alterar" />
 	</form:form>

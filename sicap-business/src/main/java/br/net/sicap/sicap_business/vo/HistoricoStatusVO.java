@@ -13,59 +13,40 @@ public class HistoricoStatusVO
     {
     }
 
-    public Integer getHstStsID()
-    {
-        return HstStsID;
-    }
-
-    public void setHstStsID(Integer HstStsID)
-    {
-        this.HstStsID = HstStsID;
-    }
-
-    public Integer getDetID()
-    {
-        return DetID;
-    }
-
-    public void setDetID(Integer DetID)
-    {
-        this.DetID = DetID;
-    }
-
-    public Integer getTpStsID()
-    {
-        return TpStsID;
-    }
-
-    public void setTpStsID(Integer TpStsID)
-    {
-        this.TpStsID = TpStsID;
-    }
-
-    public Integer getHstStsDataInicial()
-    {
-        return HstStsDataInicial;
-    }
-
-    public void setHstStsDataInicial(Integer HstStsDataInicial)
-    {
-        this.HstStsDataInicial = HstStsDataInicial;
-    }
-
-    public Integer getHstStsDataFinal()
-    {
-        return HstStsDataFinal;
-    }
-
-    public void setHstStsDataFinal(Integer HstStsDataFinal)
-    {
-        this.HstStsDataFinal = HstStsDataFinal;
-    }
-
+ 
     private Integer HstStsID;
     private Integer DetID;
     private Integer TpStsID;
-    private Integer HstStsDataInicial;
-    private Integer HstStsDataFinal;
+    private String HstStsDataInicial;
+    private String HstStsDataFinal;
+	public Integer getHstStsID() {
+		return HstStsID;
+	}
+	public void setHstStsID(Integer hstStsID) {
+		HstStsID = hstStsID;
+	}
+	public Integer getDetID() {
+		return DetID;
+	}
+	public void setDetID(Integer detID) {
+		DetID = detID;
+	}
+	public Integer getTpStsID() {
+		return TpStsID;
+	}
+	public void setTpStsID(Integer tpStsID) {
+		TpStsID = tpStsID;
+	}
+	public String getHstStsDataInicial() {
+		return HstStsDataInicial;
+	}
+	public void setHstStsDataInicial(String hstStsDataInicial) {
+		HstStsDataInicial = hstStsDataInicial;
+	}
+	public String getHstStsDataFinal() {
+		return HstStsDataFinal;
+	}
+	public void setHstStsDataFinal(String hstStsDataFinal) {
+		HstStsDataFinal = hstStsDataFinal;
+	}
 }

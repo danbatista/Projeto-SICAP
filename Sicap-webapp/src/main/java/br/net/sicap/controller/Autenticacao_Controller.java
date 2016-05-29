@@ -45,9 +45,9 @@ public class Autenticacao_Controller {
 	        		   
 				BeanUtils.copyProperties(CMD, usuarioSend);
 				usuarioReceive = bo.autenticaUser(usuarioSend);
-				 System.out.println("Nome:"+usuarioReceive.getName());
+				 System.out.println("Nome:"+usuarioReceive.getUCUserName());
 				 
-	     if(!(usuarioReceive.getUser().equals("") && usuarioReceive.getPassword().equals(""))){
+	     if(!(usuarioReceive.getUCLogin().equals("") && usuarioReceive.getUCPassword().equals(""))){
 			   
 				session.setAttribute("usuarioLogado", usuarioReceive);
 				System.out.println("Usuario Autenticado com sucesso!");
@@ -64,19 +64,32 @@ public class Autenticacao_Controller {
 	        return modelAndView;
 	        }
 	
-//	@RequestMapping(value = "insertUser", method = RequestMethod.POST)
-//	public ModelAndView sendForm(@ModelAttribute("Autenticacao_Command") @Valid Autenticacao_Command CMD,
-//			BindingResult result){
-//		final ModelAndView modelAndView;
-//	        if (!result.hasErrors()){
-//			AutenticacaoVO VO = new AutenticacaoVO();
-//				BeanUtils.copyProperties(CMD, VO);
-//			bo.CriarUsuario(VO);
-//			modelAndView = new ModelAndView("sucesso");
-//			return modelAndView;
-//	        }else
-//	        	modelAndView = new ModelAndView("logon");
-//	        return modelAndView;
-//	}
+	@RequestMapping(value = "userADM")
+	public ModelAndView list() {
+		ModelAndView modelAndView = new ModelAndView("userADM");
+		try {
+			modelAndView.addObject("lista", bo.listaUsers());
+			
+		} catch (Exception e) {
+			System.out.println(" " + e);
+		}
+		return modelAndView;
+
+	}
+	
+	@RequestMapping(value = "insertUser", method = RequestMethod.POST)
+	public ModelAndView sendForm(@ModelAttribute("Autenticacao_Command") @Valid Autenticacao_Command CMD,
+			BindingResult result){
+		final ModelAndView modelAndView;
+	        if (!result.hasErrors()){
+	        	UsuarioVO VO = new UsuarioVO();
+				BeanUtils.copyProperties(CMD, VO);
+			 bo.CriarUsuario(VO);
+			modelAndView = new ModelAndView("sucesso");
+			return modelAndView;
+	        }else
+	        	modelAndView = new ModelAndView("userADM");
+	        return modelAndView;
+	}
 	
 }

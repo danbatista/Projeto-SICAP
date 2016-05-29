@@ -3,88 +3,69 @@ package br.net.sicap.sicap_business.vo;
 public class UsuarioVO {
 	
 	
-	private int ID;
-	private String user;
-	private String Name;
-	private int passExpired;
-	private String email;
-	private String privilegio;
-	private int inactive;
-
-	private String password;
-	
+	private int UCIdUser;
+	private String UCLogin;
+	private String UCUserName;
+	private String UCPASSEXPIRED;
+	private String UCEmail;
+	private String UCPrivileged;
+	private String UCPassword;
+	private String UCInative;
 	private Boolean flag_logon;
-
-	public int getID() {
-		return ID;
+	
+	public int getUCIdUser() {
+		return UCIdUser;
 	}
-
-	public void setID(int iD) {
-		ID = iD;
+	public void setUCIdUser(int uCIdUser) {
+		UCIdUser = uCIdUser;
 	}
-
-	public String getUser() {
-		return user;
+	public String getUCLogin() {
+		return UCLogin;
 	}
-
-	public void setUser(String user) {
-		this.user = user;
+	public void setUCLogin(String uCLogin) {
+		UCLogin = uCLogin;
 	}
-
-	public String getName() {
-		return Name;
+	public String getUCUserName() {
+		return UCUserName;
 	}
-
-	public void setName(String name) {
-		Name = name;
+	public void setUCUserName(String uCUserName) {
+		UCUserName = uCUserName;
 	}
-
-	public int getPassExpired() {
-		return passExpired;
+	public String getUCPASSEXPIRED() {
+		return UCPASSEXPIRED;
 	}
-
-	public void setPassExpired(int i) {
-		this.passExpired = i;
+	public void setUCPASSEXPIRED(String uCPASSEXPIRED) {
+		UCPASSEXPIRED = uCPASSEXPIRED;
 	}
-
-	public String getEmail() {
-		return email;
+	public String getUCEmail() {
+		return UCEmail;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUCEmail(String uCEmail) {
+		UCEmail = uCEmail;
 	}
-
-	public String getPrivilegio() {
-		return privilegio;
+	public String getUCPrivileged() {
+		return UCPrivileged;
 	}
-
-	public void setPrivilegio(String privilegio) {
-		this.privilegio = privilegio;
+	public void setUCPrivileged(String uCPrivileged) {
+		UCPrivileged = uCPrivileged;
 	}
-
-	public int getInactive() {
-		return inactive;
+	public String getUCPassword() {
+		return UCPassword;
 	}
-
-	public void setInactive(int inactive) {
-		this.inactive = inactive;
+	public void setUCPassword(String uCPassword) {
+		UCPassword = uCPassword;
 	}
-
-	public String getPassword() {
-		return password;
+	public String getUCInative() {
+		return UCInative;
 	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUCInative(String uCInative) {
+		UCInative = uCInative;
 	}
-
 	public Boolean getFlag_logon() {
 		return flag_logon;
 	}
-
 	public void setFlag_logon(Boolean flag_logon) {
 		this.flag_logon = flag_logon;
 	}
-	
+
 }

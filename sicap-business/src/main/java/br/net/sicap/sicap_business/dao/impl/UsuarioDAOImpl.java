@@ -19,7 +19,7 @@ import br.net.sicap.sicap_business.vo.VisitanteVO;
 
 public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 
-	private final static String INSERT = "INSERT INTO UCTabUsers(UCUserName,UCPassword, UCLogin, UCUserExpired,"
+	private final static String INSERT = "INSERT INTO UCTabUsers(UCUserName,UCPassword, UCLogin, UCPASSEXPIRED,"
 	  + "UCEmail, UCPrivileged,UCInative) VALUES (?,?,?,?,?,?,?) ";
 	private final static String LIST = "Select * FROM UCTabUsers";
 	private final static String INACTIVE = "UPDATE UCTabUsers SET UCInative = 1 where UCIdUser = ?";
@@ -34,15 +34,14 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 
 	public boolean criarUsuario(UsuarioVO newUser) {
 		// TODO Auto-generated method stub
-		newUser.setPassExpired(30);
-		this.update(INSERT, new Object[] { newUser.getName(), newUser.getPassword(), newUser.getUser(),
-				newUser.getPassExpired(), newUser.getEmail(), newUser.getPrivilegio(), newUser.getInactive() });
+		this.update(INSERT, new Object[] { newUser.getUCUserName(), newUser.getUCPassword(), newUser.getUCLogin(),
+				newUser.getUCPASSEXPIRED(), newUser.getUCEmail(), newUser.getUCPrivileged(), newUser.getUCInative()});
 		return true;
 	}
 
 	public boolean inativarUsuario(UsuarioVO user) {
 		// TODO Auto-generated method stub
-		this.update(INACTIVE, new Object[] { user.getID() });
+	//	this.update(INACTIVE, new Object[] { user.getUCIdUser()});
 		return true;
 	}
 
@@ -51,6 +50,9 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 		List<UsuarioVO> lista = null;
 		try {
 			lista = query(LIST, new BeanPropertyRowMapper<UsuarioVO>(UsuarioVO.class));
+			for (UsuarioVO x : lista) {
+				System.out.println(x.getUCUserName());
+			}
 			return lista;
 		} catch (Exception e) {
 			System.out.println("" + e.getCause());
@@ -68,20 +70,9 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 	public UsuarioVO autenticaUser(UsuarioVO user) {
 
 		String VERIFICA_AUTENTICACAO = "Select UCUserName, UCLogin, UCPassword FROM UCTabUsers where UCLogin = ? and UCPassword = ?";
-		/*
-		 * final UsuarioVO vo = this.queryForObject(VERIFICA_AUTENTICACAO, new
-		 * Object[] { user.getUser(), user.getPassword() }, new int[] {
-		 * Types.VARCHAR, Types.VARCHAR }, UsuarioVO.class);
-		 */
-		/*
-		 * List<UsuarioVO> lista = query(VERIFICA_AUTENTICACAO, new Object[] {
-		 * user.getUser(), user.getPassword() }, new int[] { Types.VARCHAR,
-		 * Types.VARCHAR }, new
-		 * BeanPropertyRowMapper<UsuarioVO>(UsuarioVO.class));
-		 */
 		UsuarioVO usuario = (UsuarioVO) this.queryForObject(VERIFICA_AUTENTICACAO,
-				new Object[] { user.getUser(), user.getPassword() }, new UserRowMapper());
-		System.out.println("Encontrado:" + usuario.getName());
+				new Object[] { user.getUCLogin(), user.getUCPassword() }, new UserRowMapper());
+		System.out.println("Encontrado:" + usuario.getUCUserName());
 		return usuario;
 
 	}
@@ -90,9 +81,9 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 		// Mapear o Usuario
 		public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 			UsuarioVO user = new UsuarioVO();
-			user.setUser(rs.getString("UCLogin"));
-			user.setPassword(rs.getString("UCPassword"));
-			user.setName(rs.getString("UCUserName"));
+			user.setUCLogin(rs.getString("UCLogin"));
+			user.setUCPassword(rs.getString("UCPassword"));
+			user.setUCUserName(rs.getString("UCUserName"));
 			return user;
 		}
 	}
