@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
 	<wb-module deploy-name="Sicap-webapp">
+<<<<<<< Updated upstream
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <dependent-module archiveName="sicap-business-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sicap-business/sicap-business">
@@ -7,5 +8,14 @@
         </dependent-module>
 		<property name="java-output-path" value="/Sicap-webapp/build/classes"/>
         <property name="context-root" value="br.net.sicap"/>
+=======
+		<wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <dependent-module archiveName="sicap-business-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sicap-business/sicap-business">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+		<property name="context-root" value="Sicap-webapp"/>
+		<property name="java-output-path" value="/Sicap-webapp/build/classes"/>
+>>>>>>> Stashed changes
 	</wb-module>
 </project-modules>
