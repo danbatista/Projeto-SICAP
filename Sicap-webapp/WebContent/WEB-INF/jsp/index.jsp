@@ -41,7 +41,7 @@
 							entradas/saidas </a></li>
 					<li id="li"><a class="" href="index.html">Histórico
 							visitas </a></li>
-					<li id="li"><a class="" href="index.html">Restrições </a></li>
+					<li id="li"><a class="" href="historicoStatus">Restrições </a></li>
 					<li id="li"><a class="" href="index.html">Digitais </a></li>
 					<li id="li"><a class="" href="index.html">Associação</a></li>
 				</ul>
@@ -143,7 +143,7 @@
 										class="shortcut-label">Detentos</span> </a><a href="javascript:;"
 										class="shortcut"><i class="shortcut-icon  icon-signout"></i><span
 										class="shortcut-label">Saida Adicional</span> </a><a
-										href="javascript:;" class="shortcut"><i
+										href="historicoStatus" class="shortcut"><i
 										class="shortcut-icon  icon-lock"></i> <span
 										class="shortcut-label">Restrições</span> </a><a
 										href="javascript:;" class="shortcut"> <i

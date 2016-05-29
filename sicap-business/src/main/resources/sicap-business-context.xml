@@ -48,9 +48,9 @@
 
 	<!-- AUTENTICACAO BEANS -->
 
-	<bean id="ICelaBO" class="br.net.sicap.sicap_business.bo.impl.CelaBOImpl">
+	<bean id="ICelaPavilhaoBO" class="br.net.sicap.sicap_business.bo.impl.CelaPavilhaoBOImpl">
 	</bean>
-	<bean id="ICelaDAO" class="br.net.sicap.sicap_business.dao.impl.CelaDAOImpl">
+	<bean id="ICelaPavilhaoDAO" class="br.net.sicap.sicap_business.dao.impl.CelaPavDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
 
@@ -82,15 +82,6 @@
 		<constructor-arg ref="dataSource" />
 	</bean>
 
-	<!-- IPavilhaoBO BEANS -->
-
-	<bean id="IPavilhaoBO" class="br.net.sicap.sicap_business.bo.impl.PavilhaoBOImpl">
-	</bean>
-
-	<bean id="IPavilhaoDAO"
-		class="br.net.sicap.sicap_business.dao.impl.PavilhaoDAOImpl">
-		<constructor-arg ref="dataSource" />
-	</bean>
 	<!-- IRestricoesDAO BEANS -->
 
 	<bean id="IRestricoesBO" class="br.net.sicap.sicap_business.bo.impl.RestricoesBOImpl">
@@ -100,6 +91,17 @@
 		class="br.net.sicap.sicap_business.dao.impl.RestricoesDAOImpl">
 		<constructor-arg ref="dataSource" />
 	</bean>
+	
+		<!-- IRestricoesDAO BEANS -->
+
+	<bean id="IHistoricoStatusBO" class="br.net.sicap.sicap_business.bo.impl.HistoricoStatusBOImpl">
+	</bean>
+
+	<bean id="IHistoricoStatusDAO"
+		class="br.net.sicap.sicap_business.dao.impl.HistoricoStatusDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
 
 
 	<bean id="txManager"
@@ -119,15 +121,22 @@
 <!-- 		<property name="password" value="sicap" /> -->
 <!-- 	</bean> -->
 
-<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://localhost:5432/BdAcesso2" />
-		<property name="username" value="postgres" />
-		<property name="password" value="admin" />
+<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!-- 		<property name="driverClassName" value="org.postgresql.Driver" /> -->
+<!-- 		<property name="url" value="jdbc:postgresql://localhost:5432/BdAcesso2" /> -->
+<!-- 		<property name="username" value="postgres" /> -->
+<!-- 		<property name="password" value="admin" /> -->
+<!-- 	</bean> -->
+
+
+	<!-- PRD DataSource (assign PRD database from another environment) -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url"
+			value="jdbc:sqlserver://DANIEL-PC\SQLEXPRESS;DataBaseName=BdAcesso2" />
+		<property name="username" value="sicap" />
+		<property name="password" value="sicap" />
 	</bean>
-
-
-
 
 
 </beans>

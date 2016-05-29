@@ -1,19 +1,12 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) 
-// Source File Name:   HistoricoStatusVO.java
+package br.net.sicap.command;
 
-package br.net.sicap.sicap_business.vo;
+public class HistoricoStatus_Command {
 
+	public HistoricoStatus_Command() {
+		// TODO Auto-generated constructor stub
+	}
+	
 
-public class HistoricoStatusVO
-{
-
-    public HistoricoStatusVO()
-    {
-    }
-
- 
     private Integer HstStsID;
     private Integer DetID;
     private Integer TpStsID;
@@ -49,4 +42,5 @@ public class HistoricoStatusVO
 	public void setHstStsDataFinal(String hstStsDataFinal) {
 		HstStsDataFinal = hstStsDataFinal;
 	}
+
 }
