@@ -17,12 +17,6 @@
 					<li class="">
 	  					<a href="#update" data-toggle="tab">Atualizar</a>
 					</li>
-					<li class="">
-	  					<a href="#list" data-toggle="tab">Listar</a>
-					</li>
-					<li class="">
-	  					<a href="#remove" data-toggle="tab">Remover</a>
-					</li>
 	  			</ul>
 	  			<br/>
 	  			<div class="tab-content">
@@ -239,14 +233,6 @@
 						</form:form>
 					</div>
 	  				<div class="tab-pane" id="update">
-	  				
-	  				</div>
-	  				<div class="tab-pane" id="list">
-	  				
-	  				</div>
-	  				<div class="tab-pane" id="remove">
-	  				
-	  				</div>
 	  			</div>
 			
 			</div>
