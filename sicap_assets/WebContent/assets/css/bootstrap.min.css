@@ -364,8 +364,9 @@ ul {
 ol {
 	list-style: decimal;
 }
-li {
-	line-height: 18px;
+#li {
+	line-height: 0px;
+	list-style-type: none;
 }
 ul.unstyled, ol.unstyled {
 	margin-left: 0;
@@ -1938,7 +1939,7 @@ background-repeat:no-repeat;
   background-image: -moz-linear-gradient(rgba(126, 178, 22, 0), rgba(0, 0, 0, 0.1));
   background-image: -o-linear-gradient(rgba(126, 178, 22, 0), rgba(0, 0, 0, 0.1));
   background-image: linear-gradient(rgba(126, 178, 22, 0), rgba(0, 0, 0, 0.1));
-  background-color: #7eb216;
+  background-color: rgb(45, 78, 91);
   border-color: #6e9b13 #6e9b13 #3e570b;
   border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.15);
   color: white;
@@ -1946,7 +1947,7 @@ background-repeat:no-repeat;
   *background-color: #6e9b13;
 }
 .btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
-	background-color: #6e9b13;
+	background-color: rgb(77, 133, 155);
   color: white;
   *background-color: #5e8510;
 }
@@ -2568,7 +2569,14 @@ filter:progid:dximagetransform.microsoft.gradient(enabled=false);
 	font-weight: 200;
 	line-height: 1;
 	color: #ffffff;
+
+/* 	background: #3B8686; */
 }
+
+.navbar .brand:hover{
+	color: rgb(115, 200, 232);
+}
+
 .navbar .navbar-text {
 	margin-bottom: 0;
 	line-height: 40px;
