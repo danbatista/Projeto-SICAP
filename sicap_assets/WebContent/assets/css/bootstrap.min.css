@@ -1,3 +1,5 @@
+
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 	display: block;
 }
@@ -1934,7 +1936,7 @@ background-repeat:no-repeat;
 	background-color: #912118 \9;
 }
 .btn-success {
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(126, 178, 22, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(126, 178, 22, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
   background-image: -webkit-linear-gradient(rgba(126, 178, 22, 0), rgba(0, 0, 0, 0.1));
   background-image: -moz-linear-gradient(rgba(126, 178, 22, 0), rgba(0, 0, 0, 0.1));
   background-image: -o-linear-gradient(rgba(126, 178, 22, 0), rgba(0, 0, 0, 0.1));
@@ -2569,7 +2571,6 @@ filter:progid:dximagetransform.microsoft.gradient(enabled=false);
 	font-weight: 200;
 	line-height: 1;
 	color: #ffffff;
-
 /* 	background: #3B8686; */
 }
 

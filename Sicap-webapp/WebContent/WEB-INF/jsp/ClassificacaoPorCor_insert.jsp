@@ -18,11 +18,27 @@
 		<form:errors path="descricao" cssClass="error" />
 			<div class="field">
 			Cors:
-			<form:input path="cor" maxlength="1" />
+			<form:input id = "cor" path="cor" maxlength="1" />
 			<form:errors path="cor" cssClass="error" />
 		</div>
 		
 		<input class="button" type="submit" value="Cadastrar" />
 	</form:form>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/sicap_assets/assets/js/jquery-1.7.2.min.js"></script>
+	<script src="/sicap_assets/assets/js/excanvas.min.js"></script>
+	<script src="/sicap_assets/assets/js/chart.min.js"
+		type="text/javascript"></script>
+	<script src="/sicap_assets/assets/js/bootstrap.js"></script>
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	
+	<script src="/sicap_assets/assets/js/jquery.minicolors.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		 $('#cor').minicolors();
+		
+		
+	});
+	</script>
 </body>
 </html>

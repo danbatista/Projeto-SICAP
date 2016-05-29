@@ -30,12 +30,12 @@ public class Visitante_Controller {
 	}
 	
 // ---------------------------------------------------------------------------- \\
-	@RequestMapping(value = "home")
-	public ModelAndView indexHome() {
-		final ModelAndView modelAndView = new ModelAndView("visitanteHome");
-		 modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
-		return modelAndView;
-	}
+//	@RequestMapping(value = "home")
+//	public ModelAndView indexHome() {
+//		final ModelAndView modelAndView = new ModelAndView("visitanteHome");
+//		 modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
+//		return modelAndView;
+//	}
 	
 	@RequestMapping(value ="visitante_insert")
 	public ModelAndView insert() {
@@ -47,6 +47,7 @@ public class Visitante_Controller {
 	public ModelAndView renderInsert() {
 	
 		ModelAndView modelAndView = new ModelAndView("visitanteHome");	
+		modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
 		return modelAndView;
 	}
 	

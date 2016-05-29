@@ -14,17 +14,17 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class DetentoDAOImpl extends JdbcTemplate implements IDetentoDAO {
 
-	private final static String INSERT = "INSERT INTO tblDetento(DetSituacao,DetNome, DetApelido, "
+	private final String INSERT = "INSERT INTO tblDetento(DetSituacao,DetNome, DetApelido, "
 			+ "DetObservacao, DetProntuario, DetPavilhao,DetCela,DetLimiteVisitantes,"
 			+ "DetLimiteSaidas, DetClassificacaoCor,DetDataPrisao, DetNomePai,DetNomeMae,DetDig01,"
 			+ "DetDig02, PavID, CelID) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private final static String UPDATE = "UPDATE tblDetento SET DetSituacao = ?,DetNome = ?, DetApelido = ?, "
+	private final String UPDATE = "UPDATE tblDetento SET DetSituacao = ?,DetNome = ?, DetApelido = ?, "
 			+ "DetObservacao = ?, DetProntuario = ?, DetPavilhao = ?,DetCela = ?,DetLimiteVisitantes =?,"
 			+ "DetLimiteSaidas = ?, DetClassificacaoCor = ?,DetDataPrisao = ?, DetNomePai = ?,DetNomeMae = ?,DetDig01 = ?,"
 			+ "DetDig02 = ?, PavID = ?, CelID = ? WHERE DetID = ? ";
-	private final static String INATIVE = "UPDATE tblDetento SET DetSituacao = 0 WHERE DetID = ?";
-	private final static String LISTALL = "SELECT TOP 200 * FROM tblDetento";
-	private final static String LISTID = "SELECT * FROM tblDetento WHERE DetID = ?";
+	private final String INATIVE = "UPDATE tblDetento SET DetSituacao = 0 WHERE DetID = ?";
+	private final String LISTALL = "SELECT  * FROM tblDetento";
+	private final String LISTID = "SELECT * FROM tblDetento WHERE DetID = ?";
 
 	public DetentoDAOImpl(DataSource dataSource) {
 		setDataSource(dataSource);
