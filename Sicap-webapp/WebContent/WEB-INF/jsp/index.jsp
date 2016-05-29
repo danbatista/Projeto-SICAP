@@ -25,65 +25,11 @@
     <![endif]-->
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a>
-				<!--  <a class="brand" href="index.html">SICAP </a> -->
-				<ul class="menu">
-					<li id="li"><a class="" href="home">Visitantes </a></li>
-					<li id="li"><a class="" href="index.html">Detentos </a></li>
-					<li id="li"><a class="" href="index.html">Digitais </a></li>
-					<li id="li"><a class="" href="index.html">Históricos
-							entradas/saidas </a></li>
-					<li id="li"><a class="" href="index.html">Histórico
-							visitas </a></li>
-					<li id="li"><a class="" href="historicoStatus">Restrições </a></li>
-					<li id="li"><a class="" href="index.html">Digitais </a></li>
-					<li id="li"><a class="" href="index.html">Associação</a></li>
-				</ul>
-
-
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /navbar-inner -->
-	</div>
-	<!-- /navbar -->
-	<div class="subnavbar">
-		<div class="subnavbar-inner">
-			<div class="container">
-				<ul class="mainnav">
-					<li class="active"><a href="home"><i class="icon-home"></i><span>Home</span>
-					</a></li>
-					<li><a href="reports.html"><i class="icon-list-alt"></i><span>Relatório</span>
-					</a></li>
-					<li><a href="visitanteHome"><i class="icon-bar-chart"></i><span>Administração</span>
-					</a></li>
-					<li><a href="shortcodes.html"><i class="icon-code"></i><span>Agendamento</span>
-					</a></li>
-					<li class="dropdown"><a href="javascript:;"
-						class="dropdown-toggle" data-toggle="dropdown"> <i
-							class="icon-long-arrow-down"></i><span>Mais Opções</span> <b
-							class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="icons.html">Icons</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="pricing.html">Pricing Plans</a></li>
-							<li><a href="login.html">Login</a></li>
-							<li><a href="signup.html">Signup</a></li>
-							<li><a href="error.html">404</a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /subnavbar-inner -->
-	</div>
-	<!-- /subnavbar -->
+	
+	<%@ include file="navbar.jsp" %>
+	
+	<%@ include file="subnavbar.jsp" %> 
+	
 	<div class="main">
 		<div class="main-inner">
 			<div class="container">
@@ -143,7 +89,7 @@
 										class="shortcut-label">Detentos</span> </a><a href="javascript:;"
 										class="shortcut"><i class="shortcut-icon  icon-signout"></i><span
 										class="shortcut-label">Saida Adicional</span> </a><a
-										href="historicoStatus" class="shortcut"><i
+										href="javascript:;" class="shortcut"><i
 										class="shortcut-icon  icon-lock"></i> <span
 										class="shortcut-label">Restrições</span> </a><a
 										href="javascript:;" class="shortcut"> <i

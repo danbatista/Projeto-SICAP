@@ -1,5 +1,6 @@
 package br.net.sicap.controller;
 
+<<<<<<< HEAD
 import java.lang.annotation.Annotation;
 
 import javax.validation.Valid;
@@ -47,6 +48,50 @@ public class HistoricoStatus_Controller {
 			VO = new HistoricoStatusVO();
 			CMD = new HistoricoStatus_Command();
 			modelAndView.addObject("lista", bo.lista());
+=======
+import javax.validation.Valid;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import br.net.sicap.command.HistoricoStatus_Command;
+import br.net.sicap.sicap_business.bo.IHistoricoStatusBO;
+import br.net.sicap.sicap_business.vo.HistoricoStatusVO;
+
+@Controller
+public class HistoricoStatus_Controller {
+
+	@Autowired
+	IHistoricoStatusBO bo;
+	 
+	public HistoricoStatus_Controller() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@ModelAttribute(value = "HistoricoStatus_Command")
+	public HistoricoStatus_Command getCHistoricoStatus_CommandObject() {
+		return new HistoricoStatus_Command();
+	}
+
+	
+	@RequestMapping(value = "sendFormInsertHistorico", method = RequestMethod.POST)
+	public ModelAndView insert(@ModelAttribute("HistoricoStatus_Command") @Valid HistoricoStatus_Command CMD, BindingResult result) {
+		ModelAndView modelAndView = new  ModelAndView("historicoHome");
+		if (result.hasErrors()) {
+			System.out.println("Erro ao tentar fazer o bind:" + result.getFieldErrors());
+			return modelAndView;
+		} else {
+			HistoricoStatusVO VO = new HistoricoStatusVO();
+			BeanUtils.copyProperties(CMD, VO);
+			bo.insert(VO);
+>>>>>>> refs/remotes/origin/versao11
 			System.out.println("Historico Registrado com Sucesso!");
 			return modelAndView;
 		}

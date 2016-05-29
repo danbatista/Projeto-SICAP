@@ -16,9 +16,15 @@
 			<form:input path="descricao" maxlength="100" />
 		</div>
 		<form:errors path="descricao" cssClass="error" />
+<<<<<<< HEAD
 			<label>Cor:</label>
 			<input id="background-color" type="color" onchange="javascript:document.getElementById('chosen-color').value = document.getElementById('background-color').value;">
 			<form:input id ="chosen-color" type="hidden" path="cor" maxlength="1" />
+=======
+			<div class="field">
+			Cors:
+			<form:input id = "cor" path="cor" maxlength="1" />
+>>>>>>> refs/remotes/origin/versao11
 			<form:errors path="cor" cssClass="error" />
 		<input class="button" type="submit" value="Cadastrar" />
 	</form:form>
@@ -34,6 +40,11 @@
 	<script>
 	$(document).ready(function() {
 		 $('#cor').minicolors();
+<<<<<<< HEAD
+=======
+		
+		
+>>>>>>> refs/remotes/origin/versao11
 	});
 	</script>
 </body>

@@ -14,7 +14,11 @@ import br.net.sicap.sicap_business.vo.HistoricoStatusVO;
 public class HistoricoStatusDAOImpl extends JdbcTemplate implements IHistoricoStatusDAO {
 
 	private final static String INSERT = "INSERT INTO tblHistoricoStatus(DetID,TpStsID,"
+<<<<<<< HEAD
 			+ "HstStsDataInicial,HstStsDataFinal) VALUES(?,?,?,?)";
+=======
+			+ "HstStsDataInicial,HstStsDataFinal";
+>>>>>>> refs/remotes/origin/versao11
 	private final static String DELETE = "DELETE FROM tblHistoricoStatus WHERE HstStsID = ?";
 	private final static String UPDATE = "UPDATE tblHistoricoStatus SET DetID = ?, TpStsID = ?, HstStsDataInicial =?, "
 			+ "HstStsDataFinal = ? WHERE HstStsID = ? ";
