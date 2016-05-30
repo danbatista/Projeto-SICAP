@@ -1,5 +1,8 @@
 package br.net.sicap.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
@@ -47,7 +50,7 @@ public class Visitante_Controller {
 	public ModelAndView renderInsert() {
 	
 		ModelAndView modelAndView = new ModelAndView("visitanteHome");	
-		modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
+		modelAndView.addObject("listaVisitante", bo.listaPersonalizada());
 		return modelAndView;
 	}
 	
@@ -87,10 +90,14 @@ public class Visitante_Controller {
 	
 	@RequestMapping(value = "visitanteUpdate")
 	public ModelAndView carregaTelaVisitante(@RequestParam(value="id") int id){
-		ModelAndView modelAndView = new ModelAndView("visitante_update");
+		ModelAndView modelAndView = new ModelAndView("visitante_insert");
 		this.idVisitante = id;
-		System.out.println(" ->"+idVisitante);
-		modelAndView.addObject("update", bo.listaPorId(id));
+		//System.out.println(" ->"+idVisitante);
+		final VisitanteVO selected = bo.listaPorId(id);
+		if (selected == null){
+			return renderInsert();
+		}
+		modelAndView.addObject("Visitante_Command", selected);
 		return modelAndView;
 	}
 	
