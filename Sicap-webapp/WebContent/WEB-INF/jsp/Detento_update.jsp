@@ -8,174 +8,106 @@
 <title>Atualização de Visitantes</title>
 </head>
 <body>
-	<!--       Não esquecer do importe da tag lib que está localizado na linha 1 desse código -->
-	<!--       o valor update vem do controller, que é setado como um object para essa view -->
-
-
-	<form:form action="sendFormUpdateVisitante" class="form"
-		commandName="Visitante_Command">
-
-		<!--                                                                Detalhe importante, a primeira letra depois -->
-		<!--                                                                 do '...update.' é sempre minuscula o resto -->
-		<!--                                                                 permanece identico ao atributo da
-																    classe Command  -->
+	<form:form action="sendFormInsertDetento" class="form"
+		commandName="Detento_Command">
 		<div class="field">
-			Detento ID:
-			<form:input path="DetID" size="30" value="${update.detID}" />
+			Situação:
+			<form:input path="DetSituacao" size="30" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="DetID" cssClass="error" />
-		<div class="field">
-			Situacao:
-			<form:input path="VisSituacao" size="30"
-				value="${update.visSituacao}" />
-		</div>
-		<form:errors path="VisSituacao" cssClass="error" />
+		<form:errors path="DetSituacao" cssClass="error" />
 		<div class="field">
 			Nome:
-			<form:input path="VisNome" size="30" value="${update.visNome}" />
+			<form:input path="DetNome" size="100" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="VisNome" cssClass="error" />
-
+		<form:errors path="DetNome" cssClass="error" />
 		<div class="field">
 			Apelido:
-			<form:input path="VisApelido" size="30" value="${update.visApelido}" />
+			<form:input path="DetApelido" size="30" value="${update.detSituacao}" />
 		</div>
-		<form:errors path="VisApelido" cssClass="error" />
-
+		<form:errors path="DetApelido" cssClass="error" />
 		<div class="field">
-			Observacao:
-			<form:input path="VisObservacao" size="30"
-				value="${update.visObservacao}" />
+			Observação:
+			<form:input path="DetObservacao" size="100" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="VisObservacao" cssClass="error" />
-
+		<form:errors path="DetObservacao" cssClass="error" />
 		<div class="field">
 			Foto:
-			<form:input path="VisFoto" size="30" value="${update.visFoto}" />
+			<form:input path="DetFoto" size="50" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="VisFoto" cssClass="error" />
+		<form:errors path="DetFoto" cssClass="error" />
+	
+		<div class="field">
+			Prontuário:
+			<form:input path="DetProntuario" size="30" value="${update.detSituacao}"/>
+		</div>
+		<form:errors path="DetProntuario" cssClass="error" />
+		<div class="field">
+			Pavilhão:
+			<form:input path="DetPavilhao" size="3" value="${update.detSituacao}"/>
+		</div>
+		<form:errors path="DetPavilhao" cssClass="error" />
+		<div class="field">
+			Cela:
+			<form:input path="DetCela" size="3" value="${update.detSituacao}"/>
+		</div>
+		<form:errors path="DetCela" cssClass="error" />
+		<div class="field">
+			Limite de Visitantes:
+			<form:input path="DetLimiteVisitantes" size="3" value="${update.detSituacao}"/>
+		</div>
+		<form:errors path="DetLimiteVisitantes" cssClass="error" />
+		<div class="field">
+			Limite de Saidas:
+			<form:input path="DetLimiteSaidas" size="3" value="${update.detSituacao}"/>
+		</div>
+		<form:errors path="DetLimiteSaidas" cssClass="error" />
+		<div class="field">
+			Classificação Cor:
+			<form:input path="DetClassificacaoCor" size="30" value="${update.detSituacao}" />
+		</div>
+		<form:errors path="DetClassificacaoCor" cssClass="error" />
+		<div class="field">
+			Data Prisão:
+			<form:input path="DetDataPrisao" size="30" value="${update.detSituacao}"/>
+		</div>
+		<form:errors path="DetDataPrisao" cssClass="error" />
 
 		<div class="field">
-			Logradouro:
-			<form:input path="VisLogradouro" size="30"
-				value="${update.visLogradouro}" />
+			Nome do Pai:
+			<form:input path="DetNomePai" size="100" value="${update.detSituacao}" />
 		</div>
-		<form:errors path="VisLogradouro" cssClass="error" />
+		<form:errors path="DetNomePai" cssClass="error" />
 
 		<div class="field">
-			Numero:
-			<form:input path="VisNumero" size="30" value="${update.visNumero}" />
+			Nome da Mãe:
+			<form:input path="DetNomeMae" size="100" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="VisNumero" cssClass="error" />
+		<form:errors path="DetNomeMae" cssClass="error" />
 
 		<div class="field">
-			Complemento:
-			<form:input path="VisComplemento" size="30"
-				value="${update.visComplemento}" />
+			Digital 01:
+			<form:input path="DetDig01" size="30" value="${update.detSituacao}" />
 		</div>
-		<form:errors path="VisComplemento" cssClass="error" />
+		<form:errors path="DetDig01" cssClass="error" />
 
 		<div class="field">
-			Bairro:
-			<form:input path="VisBairro" size="30" value="${update.visBairro}" />
+			Digital 02:
+			<form:input path="DetDig02" size="30" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="VisBairro" cssClass="error" />
+		<form:errors path="DetDig02" cssClass="error" />
 
 		<div class="field">
-			CEP:
-			<form:input path="VisCEP" size="30" value="${update.visCEP}" />
+			Pavilhão ID:
+			<form:input path="PavID" size="30" value="${update.detSituacao}"/>
 		</div>
-		<form:errors path="VisCEP" cssClass="error" />
+		<form:errors path="PavID" cssClass="error" />
 
 		<div class="field">
-			Cidade:
-			<form:input path="VisCidade" size="30" value="${update.visCidade}" />
+			Cela ID:
+			<form:input path="CelID" size="30" value="${update.celID}"/>
 		</div>
-		<form:errors path="VisCidade" cssClass="error" />
-
-		<div class="field">
-			Estado:
-			<form:input path="VisEstado" size="30" value="${update.visEstado}" />
-		</div>
-		<form:errors path="VisEstado" cssClass="error" />
-
-		<div class="field">
-			PRTID:
-			<form:input path="PrtID" size="30" value="${update.prtID}" />
-		</div>
-		<form:errors path="PrtID" cssClass="error" />
-
-		<div class="field">
-			RG:
-			<form:input path="VisRG" size="30" value="${update.visRG}" />
-		</div>
-		<form:errors path="VisRG" cssClass="error" />
-
-		<div class="field">
-			CPF:
-			<form:input path="VisCPF" size="30" value="${update.visCPF}" />
-		</div>
-		<form:errors path="VisCPF" cssClass="error" />
-
-		<div class="field">
-			CNH:
-			<form:input path="VisCNH" size="30" value="${update.visCNH}" />
-		</div>
-		<form:errors path="VisCNH" cssClass="error" />
-
-		<div class="field">
-			Reservista:
-			<form:input path="VisReservista" size="30"
-				value="${update.visReservista}" />
-		</div>
-		<form:errors path="VisReservista" cssClass="error" />
-
-		<div class="field">
-			CTPS:
-			<form:input path="VisCTPS" size="30" value="${update.visCTPS}" />
-		</div>
-		<form:errors path="VisCTPS" cssClass="error" />
-
-		<div class="field">
-			Nascimento:
-			<form:input path="VisNascimento" size="30"
-				value="${update.visNascimento}" />
-		</div>
-		<form:errors path="VisNascimento" cssClass="error" />
-
-		<div class="field">
-			Tipo:
-			<form:input path="VisTipo" size="30" value="${update.visTipo}" />
-		</div>
-		<form:errors path="VisTipo" cssClass="error" />
-
-		<div class="field">
-			Dig01:
-			<form:input path="VisDig01" size="30" value="${update.visDig01}" />
-		</div>
-		<form:errors path="VisDig01" cssClass="error" />
-
-		<div class="field">
-			Dig02:
-			<form:input path="VisDig02" size="30" value="${update.visDig02}" />
-		</div>
-		<form:errors path="VisDig02" cssClass="error" />
-
-		<div class="field">
-			StatusCarteira:
-			<form:input path="VisStatusCarteira" size="30"
-				value="${update.visStatusCarteira}" />
-		</div>
-		<form:errors path="VisStatusCarteira" cssClass="error" />
-
-		<div class="field">
-			Telefone:
-			<form:input path="VisTelefone" size="30"
-				value="${update.visTelefone}" />
-		</div>
-		<form:errors path="VisTelefone" cssClass="error" />
-
-		<input class="button" type="submit" value="Alterar" />
+		<form:errors path="CelID" cssClass="error" />
+		<input class="button" type="submit" value="Atualizar" />
 	</form:form>
 </body>
 </html>

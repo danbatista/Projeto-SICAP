@@ -33,7 +33,7 @@
 				<div class="row">
 					
 					<%@ include file="visitante_insert.jsp" %>
-
+                    <%@ include file="visitante_list.jsp" %>
 				</div>
 				<!-- /row -->
 			</div>

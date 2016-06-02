@@ -90,7 +90,7 @@ public class Visitante_Controller {
 	
 	@RequestMapping(value = "visitanteUpdate")
 	public ModelAndView carregaTelaVisitante(@RequestParam(value="VisID") int id){
-		ModelAndView modelAndView = new ModelAndView("visitante_insert");
+		ModelAndView modelAndView = new ModelAndView("visitante_update");
 		this.idVisitante = id;
 		System.out.println(" ->"+id);
 		final VisitanteVO selected = bo.listaPorId(id);

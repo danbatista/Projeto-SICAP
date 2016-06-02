@@ -112,21 +112,21 @@
 	<tx:annotation-driven transaction-manager="txManager" />
 
 
-	<!-- PRD DataSource (assign PRD database from another environment) -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<property name="url"
-			value="jdbc:sqlserver://CLIENTE-HP\SQLEXPRESS;DataBaseName=BdAcesso2" />
-		<property name="username" value="sicap" />
-		<property name="password" value="sicap" />
-	</bean>
 
-<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
-<!-- 		<property name="driverClassName" value="org.postgresql.Driver" /> -->
-<!-- 		<property name="url" value="jdbc:postgresql://localhost:5432/BdAcesso2" /> -->
-<!-- 		<property name="username" value="postgres" /> -->
-<!-- 		<property name="password" value="admin" /> -->
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!-- 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" /> -->
+<!-- 		<property name="url" -->
+<!-- 			value="jdbc:sqlserver://CLIENTE-HP\SQLEXPRESS;DataBaseName=BdAcesso2" /> -->
+<!-- 		<property name="username" value="sicap" /> -->
+<!-- 		<property name="password" value="sicap" /> -->
 <!-- 	</bean> -->
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/BdAcesso2" />
+		<property name="username" value="postgres" />
+		<property name="password" value="admin" />
+	</bean>
 
 
 </beans>

@@ -48,7 +48,6 @@ public class Autenticacao_Controller {
 		UsuarioVO usuarioReceive = new UsuarioVO();
 		modelAndView.addObject("listaVisitante",boVis.listaPersonalizada());
 	        if (!result.hasErrors()){
-	        		   
 				BeanUtils.copyProperties(CMD, usuarioSend);
 				usuarioReceive = bo.autenticaUser(usuarioSend);
 				 System.out.println("Nome:"+usuarioReceive.getUCUserName());

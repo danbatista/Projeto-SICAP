@@ -26,7 +26,7 @@
 							<div class="control-group">
 								<label class="control-label" for="det-id">Detento ID</label>
 								<div class="controls">
-									<form:input id="det-id" path="DetID" size="30"  class="span6" placeholder="0" type="text"/>
+									<form:input id="det-id" path="DetID" size="30"  class="span6" placeholder="" type="text"/>
 									<form:errors path="DetID" cssClass="error" />
 								</div>
 							</div>
@@ -66,7 +66,7 @@
 							<div class="control-group">
 								<label class="control-label" for="foto">Foto</label>
 								<div class="controls">
-									<form:input id="foto" path="VisFoto"  class="span6" type="file"/>
+									<form:input id="foto" path="VisFoto"  class="span6" type="text"/>
 									<form:errors path="VisFoto" cssClass="error" />
 								</div>
 							</div>
@@ -130,7 +130,7 @@
 							</div>
 							
 							<div class="control-group">
-								<label class="control-label" for="prtId">PrtID</label>
+								<label class="control-label" for="prtId">Prontuário ID</label>
 								<div class="controls">
 									<form:input id="prtId" path="PrtID"  class="span6" placeholder="" type="text"/>
 									<form:errors path="PrtID" cssClass="error" />
@@ -180,7 +180,7 @@
 							<div class="control-group">
 								<label class="control-label" for="bornDate">Data de Nascimento</label>
 								<div class="controls">
-									<form:input id="bornDate" path="VisNascimento"  class="span6" size="30" placeholder="01/01/2016" pattern="dd/MM/aaaa" type="text"/>
+									<form:input id="bornDate" path="VisNascimento"  class="span6" size="30" placeholder="01/01/2016" pattern="dd/MM/aaaa" type="date"/>
 									<form:errors path="VisNascimento" cssClass="error" />
 								</div>
 							</div>

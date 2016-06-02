@@ -35,9 +35,7 @@ public class UsuarioBOImpl implements IUsuarioBO {
 
 	public UsuarioVO autenticaUser(UsuarioVO user) {
 		// TODO Auto-generated method stub
-		UsuarioVO VO = new UsuarioVO();
-		VO = dao.autenticaUser(user);
-		return VO;
+      	return dao.autenticaUser(user);
 	}
 
 	public UsuarioVO listUsersById(int uCIdUser) {
