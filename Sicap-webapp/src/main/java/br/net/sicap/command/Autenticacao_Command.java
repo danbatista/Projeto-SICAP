@@ -12,7 +12,7 @@ public class Autenticacao_Command {
 	private String UCUserName;
 	private String UCPASSEXPIRED;
 	private String UCEmail;
-	private String UCPrivileged;
+	private int UCPrivileged;
 	@NotEmpty
 	@Size(min = 12, max = 20)
 	private String UCPassword;
@@ -75,12 +75,12 @@ public class Autenticacao_Command {
 	}
 
 
-	public String getUCPrivileged() {
+	public int getUCPrivileged() {
 		return UCPrivileged;
 	}
 
 
-	public void setUCPrivileged(String uCPrivileged) {
+	public void setUCPrivileged(int uCPrivileged) {
 		UCPrivileged = uCPrivileged;
 	}
 

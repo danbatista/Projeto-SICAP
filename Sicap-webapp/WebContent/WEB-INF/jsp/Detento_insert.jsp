@@ -9,142 +9,104 @@
 </head>
 <body>
 
-	<form:form action="sendFormInsertVisitante" class="form"
-		commandName="Visitante_Command">
+	<form:form action="sendFormInsertDetento" class="form"
+		commandName="Detento_Command">
 		<div class="field">
-			Detento ID:
-			<form:input path="DetID" size="30" />
+			Situação:
+			<form:input path="DetSituacao" size="30" />
 		</div>
-		<form:errors path="DetID" cssClass="error" />
-		<div class="field">
-			Situacao:
-			<form:input path="VisSituacao" size="30" />
-		</div>
-		<form:errors path="VisSituacao" cssClass="error" />
+		<form:errors path="DetSituacao" cssClass="error" />
 		<div class="field">
 			Nome:
-			<form:input path="VisNome" size="30" />
+			<form:input path="DetNome" size="100" />
 		</div>
-		<form:errors path="VisNome" cssClass="error" />
+		<form:errors path="DetNome" cssClass="error" />
 		<div class="field">
-			apelido:
-			<form:input path="VisApelido" size="30" />
+			Apelido:
+			<form:input path="DetApelido" size="30" />
 		</div>
-		<form:errors path="VisApelido" cssClass="error" />
+		<form:errors path="DetApelido" cssClass="error" />
 		<div class="field">
-			VisObservacao:
-			<form:input path="VisObservacao" size="30" />
+			Observação:
+			<form:input path="DetObservacao" size="100" />
 		</div>
-		<form:errors path="VisObservacao" cssClass="error" />
+		<form:errors path="DetObservacao" cssClass="error" />
 		<div class="field">
-			VisFoto:
-			<form:input path="VisFoto" size="30" />
+			Foto:
+			<form:input path="DetFoto" size="50" />
 		</div>
-		<form:errors path="VisFoto" cssClass="error" />
+		<form:errors path="DetFoto" cssClass="error" />
 		<div class="field">
-			VisLogradouro:
-			<form:input path="VisLogradouro" size="30" />
+			Prontuário:
+			<form:input path="DetProntuario" size="30" />
 		</div>
-		<form:errors path="VisLogradouro" cssClass="error" />
+		<form:errors path="DetProntuario" cssClass="error" />
 		<div class="field">
-			VisNumero:
-			<form:input path="VisNumero" size="30" />
+			Pavilhão:
+			<form:input path="DetPavilhao" size="3" />
 		</div>
-		<form:errors path="VisNumero" cssClass="error" />
+		<form:errors path="DetPavilhao" cssClass="error" />
 		<div class="field">
-			VisComplemento:
-			<form:input path="VisComplemento" size="30" />
+			Cela:
+			<form:input path="DetCela" size="3" />
 		</div>
-		<form:errors path="VisComplemento" cssClass="error" />
+		<form:errors path="DetCela" cssClass="error" />
 		<div class="field">
-			VisBairro:
-			<form:input path="VisBairro" size="30" />
+			Limite de Visitantes:
+			<form:input path="DetLimiteVisitantes" size="3" />
 		</div>
-		<form:errors path="VisBairro" cssClass="error" />
+		<form:errors path="DetLimiteVisitantes" cssClass="error" />
 		<div class="field">
-			VisCEP:
-			<form:input path="VisCEP" size="30" />
+			Limite de Saidas:
+			<form:input path="DetLimiteSaidas" size="3" />
 		</div>
-		<form:errors path="VisCEP" cssClass="error" />
+		<form:errors path="DetLimiteSaidas" cssClass="error" />
 		<div class="field">
-			VisCidade:
-			<form:input path="VisCidade" size="30" />
+			Classificação Cor:
+			<form:input path="DetClassificacaoCor" size="30" />
 		</div>
-		<form:errors path="VisCidade" cssClass="error" />
+		<form:errors path="DetClassificacaoCor" cssClass="error" />
 		<div class="field">
-			VisEstado:
-			<form:input path="VisEstado" size="30" />
+			Data Prisão:
+			<form:input path="DetDataPrisao" size="30" />
 		</div>
-		<form:errors path="VisEstado" cssClass="error" />
+		<form:errors path="DetDataPrisao" cssClass="error" />
 
 		<div class="field">
-			PrtID:
-			<form:input path="PrtID" size="30" />
+			Nome do Pai:
+			<form:input path="DetNomePai" size="100" />
 		</div>
-		<form:errors path="PrtID" cssClass="error" />
+		<form:errors path="DetNomePai" cssClass="error" />
 
 		<div class="field">
-			VisRG:
-			<form:input path="VisRG" size="30" />
+			Nome da Mãe:
+			<form:input path="DetNomeMae" size="100" />
 		</div>
-		<form:errors path="VisRG" cssClass="error" />
+		<form:errors path="DetNomeMae" cssClass="error" />
 
 		<div class="field">
-			VisCPF:
-			<form:input path="VisCPF" size="30" />
+			Digital 01:
+			<form:input path="DetDig01" size="30" />
 		</div>
-		<form:errors path="VisCPF" cssClass="error" />
+		<form:errors path="DetDig01" cssClass="error" />
 
 		<div class="field">
-			VisCNH:
-			<form:input path="VisCNH" size="30" />
+			Digital 02:
+			<form:input path="DetDig02" size="30" />
 		</div>
-		<form:errors path="VisCNH" cssClass="error" />
+		<form:errors path="DetDig02" cssClass="error" />
 
 		<div class="field">
-			VisReservista:
-			<form:input path="VisReservista" size="30" />
+			Pavilhão ID:
+			<form:input path="PavID" size="30" />
 		</div>
-		<form:errors path="VisReservista" cssClass="error" />
+		<form:errors path="PavID" cssClass="error" />
 
 		<div class="field">
-			VisCTPS:
-			<form:input path="VisCTPS" size="30" />
+			Cela ID:
+			<form:input path="CelID" size="30" />
 		</div>
-		<form:errors path="VisCTPS" cssClass="error" />
-
-		<div class="field">
-			VisNascimento:
-			<form:input path="VisNascimento" size="30" />
-		</div>
-		<form:errors path="VisNascimento" cssClass="error" />
-
-		<div class="field">
-			VisTipo:
-			<form:input path="VisTipo" size="30" />
-		</div>
-		<form:errors path="VisTipo" cssClass="error" />
-
-		<div class="field">
-			VisDig01:
-			<form:input path="VisDig01" size="30" />
-		</div>
-		<form:errors path="VisDig01" cssClass="error" />
-		<div class="field">
-			VisDig02:
-			<form:input path="VisDig02" size="30" />
-		</div>
-		<form:errors path="VisDig02" cssClass="error" />
-		<div class="field">
-			VisStatusCarteira:
-			<form:input path="VisStatusCarteira" size="30" />
-		</div>
-		<form:errors path="VisStatusCarteira" cssClass="error" />
-		<div class="field">
-			VisTelefone:
-			<form:input path="VisTelefone" size="30" />
-		</div>
-		<form:errors path="VisTelefone" cssClass="error" />
+		<form:errors path="CelID" cssClass="error" />
 		<input class="button" type="submit" value="Cadastrar" />
 	</form:form>
 </body>

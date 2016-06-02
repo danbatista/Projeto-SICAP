@@ -14,10 +14,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class DetentoDAOImpl extends JdbcTemplate implements IDetentoDAO {
 
-	private final String INSERT = "INSERT INTO tblDetento(DetSituacao,DetNome, DetApelido, "
-			+ "DetObservacao, DetProntuario, DetPavilhao,DetCela,DetLimiteVisitantes,"
-			+ "DetLimiteSaidas, DetClassificacaoCor,DetDataPrisao, DetNomePai,DetNomeMae,DetDig01,"
-			+ "DetDig02, PavID, CelID) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String INSERT = "INSERT INTO tbldetento(detsituacao, detnome, detapelido, "
+			+ "detobservacao, detfoto, detprontuario, detpavilhao, detcela, detlimitevisitantes,"
+			+ " detlimitesaidas, detclassificacaocor,  detnomepai, detnomemae, pavid, celid, "
+			+ "detdig01, detdig02,dataprisao) "
+			+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private final String UPDATE = "UPDATE tblDetento SET DetSituacao = ?,DetNome = ?, DetApelido = ?, "
 			+ "DetObservacao = ?, DetProntuario = ?, DetPavilhao = ?,DetCela = ?,DetLimiteVisitantes =?,"
 			+ "DetLimiteSaidas = ?, DetClassificacaoCor = ?,DetDataPrisao = ?, DetNomePai = ?,DetNomeMae = ?,DetDig01 = ?,"
@@ -33,9 +34,9 @@ public class DetentoDAOImpl extends JdbcTemplate implements IDetentoDAO {
 	public boolean inserirDetento(DetentoVO vo) {
 		this.update(INSERT,
 				new Object[] { vo.getDetSituacao(), vo.getDetNome(), vo.getDetApelido(), vo.getDetObservacao(),
-						vo.getDetProntuario(), vo.getDetPavilhao(), vo.getDetCela(), vo.getDetLimiteVisitantes(),
-						vo.getDetLimiteSaidas(), vo.getDetClassificacaoCor(), vo.getDetDataPrisao(), vo.getDetNomePai(),
-						vo.getDetNomeMae(), vo.getDetDig01(), vo.getDetDig02(), vo.getPavID(), vo.getCelID() });
+						vo.getDetFoto(), vo.getDetProntuario(), vo.getDetPavilhao(), vo.getDetCela(),
+						vo.getDetLimiteVisitantes(), vo.getDetLimiteSaidas(), vo.getDetClassificacaoCor(), vo.getDetNomePai(),
+						vo.getDetNomeMae(), vo.getPavID(), vo.getCelID(), vo.getDetDig01(), vo.getDetDig02(), vo.getDetDataPrisao()});
 		return true;
 	}
 

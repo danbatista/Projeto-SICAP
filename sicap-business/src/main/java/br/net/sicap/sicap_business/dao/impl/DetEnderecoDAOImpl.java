@@ -14,7 +14,7 @@ import br.net.sicap.sicap_business.vo.DetEnderecoVO;
 public class DetEnderecoDAOImpl extends JdbcTemplate implements IDetEnderecoDAO {
 
 	
-	private final static String INSERT = "";
+	private final static String INSERT = "INSERT INTO ";
 	private final static String DELETE = ""; 
 	private final static String UPDATE = ""; 
 	private final static String LIST = "SELECT * FROM tblClassificacaoCor";

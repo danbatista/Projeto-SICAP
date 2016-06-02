@@ -12,17 +12,21 @@ public class DetEnderecoBOImpl implements IDetEnderecoBO
 {
    @Autowired
    IDetEnderecoDAO dao;
+   
     public boolean insert (DetEnderecoVO vo){
-    	if(dao.insert(vo));
-    	return false;
+    	return dao.insert(vo);
+    	
     }
+    
     public boolean update (DetEnderecoVO vo){
-    	if(dao.update(vo));
-    	return false;
+    	return dao.update(vo);
+    	
     }
+    
     public List<DetEnderecoVO> lista(){
     	return dao.lista();
     }
+    
     public boolean delete (int id){
     	return dao.delete(id);
     }

@@ -8,7 +8,7 @@ public class UsuarioVO {
 	private String UCUserName;
 	private String UCPASSEXPIRED;
 	private String UCEmail;
-	private String UCPrivileged;
+	private int UCPrivileged;
 	private String UCPassword;
 	private String UCInative;
 	private Boolean flag_logon;
@@ -42,10 +42,10 @@ public class UsuarioVO {
 	public void setUCEmail(String uCEmail) {
 		UCEmail = uCEmail;
 	}
-	public String getUCPrivileged() {
+	public int getUCPrivileged() {
 		return UCPrivileged;
 	}
-	public void setUCPrivileged(String uCPrivileged) {
+	public void setUCPrivileged(int uCPrivileged) {
 		UCPrivileged = uCPrivileged;
 	}
 	public String getUCPassword() {
