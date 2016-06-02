@@ -16,8 +16,8 @@
 	rel="stylesheet">
 <link href="/sicap_assets/assets/css/font-awesome.css" rel="stylesheet">
 <link href="/sicap_assets/assets/css/style.css" rel="stylesheet">
-<link href="/sicap_assets/assets/css/dashboard.css" rel="stylesheet">
-<link href="/sicap_assets/assets/css/dataTable.css" rel="stylesheet">
+<link href="/sicap_assets/assets/css/pages/dashboard.css"
+	rel="stylesheet">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -87,8 +87,6 @@
 												<form:input path="HstStsDataFinal" type="date"
 													placeholder="Data Final" value="${dados.hstStsDataFinal}" />
 												<button class="button btn btn-success btn-large">Atualizar</button>
-												<a href="deleteHistorico?HstStsID=${dados.hstStsID}"
-													type="button" class="button btn btn-info btn-large">Deletar</a>
 											</form:form>
 										</div>
 									</div>
@@ -119,6 +117,8 @@
 								<td><a href="atualizaHistorico?HstStsID=${item.hstStsID}">${item.tpStsID}</a></td>
 								<td><a href="atualizaHistorico?HstStsID=${item.hstStsID}">${item.hstStsDataInicial}</a></td>
 								<td><a href="atualizaHistorico?HstStsID=${item.hstStsID}">${item.hstStsDataFinal}</a></td>
+								<td><a href="deleteHistorico?HstStsID=${item.hstStsID}"
+													type="button" class="button btn btn-info btn-large">Deletar</a></td>
 							</tr>
 
 						</c:forEach>

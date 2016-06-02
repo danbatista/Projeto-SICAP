@@ -14,9 +14,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class ParentescoDAOImpl extends JdbcTemplate implements IParentescoDAO {
 //	[PrtParentesco] [PrtID]
 	private final static String INSERT = "INSERT INTO tblParentesco(PrtParentesco) VALUES (?)";
-	private final static String DELETE = ""; 
-	private final static String UPDATE = ""; 
-	private final static String LIST  = "SELECT * tblParentesco";  
+	private final static String DELETE = "DELETE FROM tblParentesco WHERE Prtid = ?"; 
+	private final static String UPDATE = "UPDATE tblParentesco SET PrtParentesco = ? WHERE Prtid = ? "; 
+	private final static String LIST  = "SELECT * FROM tblParentesco";  
 	 
 	public ParentescoDAOImpl() {
 	}
@@ -31,11 +31,13 @@ public class ParentescoDAOImpl extends JdbcTemplate implements IParentescoDAO {
 	}
 
 	public boolean alterarParentesco(ParentescoVO vo) {
-		return false;
+		this.update(UPDATE, new Object[]{ vo.getPrtParentesco(), vo.getPrtID()});
+		return true;
 	}
 
 	public boolean DeletarParentesco(int id) {
-		return false;
+		this.update(DELETE, new Object[]{ id});
+		return true;
 	}
 
 	public List<ParentescoVO> listaTodos() {

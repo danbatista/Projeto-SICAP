@@ -52,7 +52,7 @@ public class Detento_Controller {
 
 	@RequestMapping(value = "detento_inativa")
 	public ModelAndView inativa(@RequestParam(value = "id") int id) {
-		ModelAndView modelAndView = new ModelAndView("DetentoHome");
+		ModelAndView modelAndView = new ModelAndView("Detento_list");
 		bo.inativarDetento(id);
 		modelAndView.addObject("listaDetento", bo.listaTodos());
 		return modelAndView;

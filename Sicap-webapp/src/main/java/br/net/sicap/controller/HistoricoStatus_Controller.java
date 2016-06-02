@@ -35,6 +35,7 @@ public class HistoricoStatus_Controller {
 	@RequestMapping(value = "sendFormInsertHistorico", method = RequestMethod.POST)
 	public ModelAndView insert(@ModelAttribute("HistoricoStatus_Command") @Valid HistoricoStatus_Command CMD, BindingResult result) {
 		ModelAndView modelAndView = new  ModelAndView("historicoHome");
+		modelAndView.addObject("lista", bo.lista());
 		if (result.hasErrors()) {
 			System.out.println("Erro ao tentar fazer o bind:" + result.getFieldErrors());
 			return modelAndView;
@@ -68,6 +69,7 @@ public class HistoricoStatus_Controller {
        this.ID = id;
 		ModelAndView model = new ModelAndView("historicoHome");
 		model.addObject("dados", bo.listaById(VO.getHstStsID()));
+		model.addObject("lista", bo.lista());
 		return model;
 	}
 	
@@ -75,7 +77,7 @@ public class HistoricoStatus_Controller {
 	public ModelAndView delete(@RequestParam(value = "HstStsID") int id){
 		bo.delete(id);
 		ModelAndView model = new ModelAndView("historicoHome");
-		model.addObject("dados", bo.lista());
+		model.addObject("lista", bo.lista());
 		return model;
 	}
 	

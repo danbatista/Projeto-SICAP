@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/sicap_assets/assets/css/jquery.minicolors.css" rel="stylesheet">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classificacao por Cor</title>
@@ -23,6 +22,8 @@
 			<form:errors path="cor" cssClass="error" />
 		<input class="button" type="submit" value="Cadastrar" />
 	</form:form>
+	    
+    
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="/sicap_assets/assets/js/jquery-1.7.2.min.js"></script>
 	<script src="/sicap_assets/assets/js/excanvas.min.js"></script>
@@ -30,8 +31,6 @@
 		type="text/javascript"></script>
 	<script src="/sicap_assets/assets/js/bootstrap.js"></script>
 	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-	
-	<script src="/sicap_assets/assets/js/jquery.minicolors.min.js"></script>
 	<script>
 	
 	</script>

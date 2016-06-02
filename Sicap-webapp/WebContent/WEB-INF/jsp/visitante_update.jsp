@@ -100,7 +100,7 @@
 		<form:errors path="VisEstado" cssClass="error" />
 
 		<div class="field">
-			PRTID:
+			Parentesco ID:
 			<form:input path="PrtID" size="30" value="${update.prtID}" />
 		</div>
 		<form:errors path="PrtID" cssClass="error" />

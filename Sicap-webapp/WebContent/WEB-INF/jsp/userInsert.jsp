@@ -45,6 +45,8 @@
 								<td><a>${item.UCPASSEXPIRED}</a></td>
 								<td><a>${item.UCEmail}</a></td>
 								<td><a>${item.UCInative}</a></td>
+								<td><a onclick="javascript:inativa();"
+								href="inativaUser?UCIdUser=${item.UCIdUser}">Inativar</a></td>
 							</tr>
 
 						</c:forEach>
@@ -62,15 +64,15 @@
 
 												<form:input path="UCPassword" type="password"
 													placeholder="Password" />
-
+                                                 <label>Expiração de Senha</label>
 												<form:input path="UCPASSEXPIRED" type="date"
 													placeholder="Expiração de Senha"  />
 													
 													<form:input path="UCEmail" type="email"
 													placeholder="E-mail"  />
-													 
+												<label>Privilégio</label>
 													<form:input path="UCPrivileged" type="number"
-													placeholder="Privilegio"  />
+													placeholder="Privilegio"/>
 													
 													   <form:errors path="UCUserName" />
 													      <form:errors path="UCLogin" />
@@ -117,3 +119,16 @@
 		</div>
 	</div>
 </div>
+
+
+	<script>
+function inativa(){
+decisao = confirm("Você deseja realmente inativar esse Usuário?");
+if (decisao){
+	alert("Usuário inativado com sucesso!");
+   return true;
+} else {
+    return false;
+}
+}
+</script>

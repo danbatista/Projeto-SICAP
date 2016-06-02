@@ -40,12 +40,6 @@ public class Visitante_Controller {
 //		return modelAndView;
 //	}
 	
-	@RequestMapping(value ="visitante_insert")
-	public ModelAndView insert() {
-		ModelAndView modelAndView = new ModelAndView("visitante_insert");	
-		return modelAndView;
-	}
-
 	@RequestMapping(value = "visitanteHome")
 	public ModelAndView renderInsert() {
 	
@@ -56,22 +50,12 @@ public class Visitante_Controller {
 	
 	@RequestMapping(value = "inativa")
 	public ModelAndView inativa(@RequestParam(value="id") int id){
-		ModelAndView modelAndView = new ModelAndView("index");
+		ModelAndView modelAndView = new ModelAndView("visitanteHome");
 		bo.inativarVisitante(id);
 		modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "list")
-	public ModelAndView renderList() {
-		ModelAndView modelAndView = new ModelAndView("visitante_list");	
-		try {
-			 modelAndView.addObject("listaVisitante",bo.listaTodos());
-			}catch(Exception e){
-				System.out.println(" " + e);
-			}
-			return modelAndView;
-	}
 	@RequestMapping(value = "sendFormInsertVisitante", method = RequestMethod.POST)
 	public ModelAndView sendForm(@ModelAttribute("Visitante_Command") @Valid Visitante_Command CMD,
 			BindingResult result){
@@ -83,14 +67,14 @@ public class Visitante_Controller {
 			modelAndView = new ModelAndView("sucesso");
 			return modelAndView;
 	        }else
-	        	modelAndView = new ModelAndView("visitante_insert");
+	        	modelAndView = new ModelAndView("visitanteHome");
 	        return modelAndView;
 	}
 	private int idVisitante;
 	
 	@RequestMapping(value = "visitanteUpdate")
 	public ModelAndView carregaTelaVisitante(@RequestParam(value="VisID") int id){
-		ModelAndView modelAndView = new ModelAndView("visitante_insert");
+		ModelAndView modelAndView = new ModelAndView("visitanteHome");
 		this.idVisitante = id;
 		System.out.println(" ->"+id);
 		final VisitanteVO selected = bo.listaPorId(id);
@@ -98,6 +82,7 @@ public class Visitante_Controller {
 			return renderInsert();
 		}
 		modelAndView.addObject("Visitante_Command", selected);
+		modelAndView.addObject("listaVisitante",bo.listaPersonalizada());
 		return modelAndView;
 	}
 	
@@ -114,7 +99,7 @@ public class Visitante_Controller {
 			modelAndView = new ModelAndView("sucesso");
 			return modelAndView;
 	        }else{
-	        	modelAndView = new ModelAndView("visitante_update");
+	        	modelAndView = new ModelAndView("visitanteHome");
 	        return modelAndView; 
 	}
 	}

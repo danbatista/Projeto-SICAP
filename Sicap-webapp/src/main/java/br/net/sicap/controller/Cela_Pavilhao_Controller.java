@@ -39,6 +39,7 @@ public class Cela_Pavilhao_Controller {
 			CelaPavilhaoVO VO = new CelaPavilhaoVO();
 			BeanUtils.copyProperties(CMD, VO);
 			CelaPavBO.insert(VO);
+			modelAndView.addObject("lista", CelaPavBO.list());
 			System.out.println("Cela Inserida com sucesso!");
 			return modelAndView;
 		}
@@ -56,6 +57,7 @@ public class Cela_Pavilhao_Controller {
 			CelaPavilhaoVO VO = new CelaPavilhaoVO();
 			BeanUtils.copyProperties(CMD, VO);
 			CelaPavBO.insert_Pavilhao(VO);
+			modelAndView.addObject("lista", CelaPavBO.list());
 			System.out.println("Pavilhão Inserida com sucesso!");
 			return modelAndView;
 		}

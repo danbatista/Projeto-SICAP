@@ -72,6 +72,7 @@ public class Tipo_Status_Controller {
 		VO.setTpStsID(id);
 		VO.setTpStsDescricao(TpStsDescricao);
 		VO.setTpStsLiberado(TpStsLiberado);
+		this.id = id;
 		modelAndView.addObject("update", VO);
 		id = VO.getTpStsID();
 		return modelAndView;

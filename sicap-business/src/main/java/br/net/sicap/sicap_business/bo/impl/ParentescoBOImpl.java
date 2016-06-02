@@ -20,17 +20,17 @@ public class ParentescoBOImpl implements IParentescoBO
 	IParentescoDAO dao;
 
     public  boolean inserirParentesco(ParentescoVO parentescovo){
-    	 if(dao.inserirParentesco(parentescovo));
-    	 return false;
+    	 return dao.inserirParentesco(parentescovo);
+    	
     }
 
     public  boolean alterarParentesco(ParentescoVO parentescovo){
-    	if(dao.alterarParentesco(parentescovo));
-    	return false;
+    	return dao.alterarParentesco(parentescovo);
+    	
     }
 
     public  boolean DeletarParentesco(int i){
-    	return true;
+    	return dao.DeletarParentesco(i);
     }
 
     public  List<ParentescoVO> listaTodos(){

@@ -17,14 +17,14 @@ public class DetentoDAOImpl extends JdbcTemplate implements IDetentoDAO {
 	private final String INSERT = "INSERT INTO tbldetento(detsituacao, detnome, detapelido, "
 			+ "detobservacao, detfoto, detprontuario, detpavilhao, detcela, detlimitevisitantes,"
 			+ " detlimitesaidas, detclassificacaocor,  detnomepai, detnomemae, pavid, celid, "
-			+ "detdig01, detdig02,dataprisao) "
+			+ "detdig01, detdig02,detdataprisao) "
 			+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private final String UPDATE = "UPDATE tblDetento SET DetSituacao = ?,DetNome = ?, DetApelido = ?, "
 			+ "DetObservacao = ?, DetProntuario = ?, DetPavilhao = ?,DetCela = ?,DetLimiteVisitantes =?,"
 			+ "DetLimiteSaidas = ?, DetClassificacaoCor = ?,DetDataPrisao = ?, DetNomePai = ?,DetNomeMae = ?,DetDig01 = ?,"
 			+ "DetDig02 = ?, PavID = ?, CelID = ? WHERE DetID = ? ";
 	private final String INATIVE = "UPDATE tblDetento SET DetSituacao = 0 WHERE DetID = ?";
-	private final String LISTALL = "SELECT  * FROM tblDetento";
+	private final String LISTALL = "SELECT * FROM tblDetento where DetSituacao = 1 ";
 	private final String LISTID = "SELECT * FROM tblDetento WHERE DetID = ?";
 
 	public DetentoDAOImpl(DataSource dataSource) {

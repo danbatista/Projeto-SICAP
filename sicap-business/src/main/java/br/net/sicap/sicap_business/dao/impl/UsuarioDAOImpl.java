@@ -21,7 +21,7 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 
 	private final static String INSERT = "INSERT INTO UCTabUsers(UCUserName,UCPassword, UCLogin, UCPASSEXPIRED,"
 	  + "UCEmail, UCPrivileged,UCInative) VALUES (?,?,?,?,?,?,?) ";
-	private final static String LIST = "Select * FROM UCTabUsers";
+	private final static String LIST = "Select * FROM UCTabUsers where UCInative = 0";
 	private final static String INACTIVE = "UPDATE UCTabUsers SET UCInative = 1 where UCIdUser = ?";
 	private static final String LISTBYID = "Select * from UCTabUsers where UCIdUser = ?";
 	private static final String UPDATE = "UPDATE UCTabUsers SET UCUserName =?,UCPassword =?, UCLogin= ?, UCPASSEXPIRED =?,"
@@ -44,7 +44,7 @@ public class UsuarioDAOImpl extends JdbcTemplate implements IUsuarioDAO {
 
 	public boolean inativarUsuario(UsuarioVO user) {
 		// TODO Auto-generated method stub
-	//	this.update(INACTIVE, new Object[] { user.getUCIdUser()});
+		this.update(INACTIVE, new Object[] { user.getUCIdUser()});
 		return true;
 	}
 

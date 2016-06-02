@@ -26,7 +26,7 @@ public class VisitanteDAOImpl extends JdbcTemplate implements IVisitanteDAO {
 			+ "VisApelido,VisObservacao,VisFoto,VisLogradouro,VisNumero,"
 			+ "VisComplemento,VisBairro, VisCEP,VisCidade,VisEstado,PrtID,"
 			+ "VisRG,VisCPF,VisTelefone from  tblVisitante ORDER BY VisNome ASC ";
-	private final String LISTPERSONALIZADA = "SELECT TOP 50 * from  tblVisitante where VisSituacao = 1 ORDER BY DetID ASC";
+	private final String LISTPERSONALIZADA = "SELECT * from  tblVisitante where VisSituacao = 1 ORDER BY DetID ASC";
 
 	public VisitanteDAOImpl(DataSource dataSource) {
 		setDataSource(dataSource);

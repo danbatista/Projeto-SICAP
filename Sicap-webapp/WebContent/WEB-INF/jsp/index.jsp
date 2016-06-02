@@ -63,24 +63,20 @@
 										class="shortcut-label">Visitantes</span> </a><a
 										href="javascript:;" class="shortcut"><i
 										class="shortcut-icon icon-hand-up"></i><span
-										class="shortcut-label">Digitais</span> </a><a href="javascript:;"
+										class="shortcut-label">Administração Prisional</span> </a><a href="javascript:;"
 										class="shortcut"><i class="shortcut-icon icon-share-alt"></i>
-										<span class="shortcut-label">Associar</span> </a><a
+										<span class="shortcut-label">Classificação por Por</span> </a><a
 										href="javascript:;" class="shortcut"> <i
 										class="shortcut-icon  icon-list"></i><span
-										class="shortcut-label">Histórico entradas/saidas</span>
+										class="shortcut-label">Histórico Status</span>
 									</a><a href="javascript:;" class="shortcut"><i
 										class="shortcut-icon icon-user"></i><span
 										class="shortcut-label">Detentos</span> </a><a href="javascript:;"
 										class="shortcut"><i class="shortcut-icon  icon-signout"></i><span
-										class="shortcut-label">Saida Adicional</span> </a><a
+										class="shortcut-label">Manutenção de Usuários</span> </a><a
 										href="javascript:;" class="shortcut"><i
 										class="shortcut-icon  icon-lock"></i> <span
-										class="shortcut-label">Restrições</span> </a><a
-										href="javascript:;" class="shortcut"> <i
-										class="shortcut-icon icon-list"></i><span
-										class="shortcut-label">Histórico Visitas</span>
-									</a>
+										class="shortcut-label">Tipos de Status</span> </a>
 								</div>
 								<!-- /shortcuts -->
 							</div>
@@ -100,74 +96,7 @@
 		</div>
 		<!-- /main-inner -->
 
-		<div class="widget widget-nopad">
-			<div class="lista">
-
-				<div class="widget-header">
-					<i class="icon-list-alt"></i>
-					<h3>Visitantes Ativos</h3>
-				</div>
-				<div class="widget widget-table action-table">
-					<!-- /widget-header -->
-					<div class="widget-content">
-						<table class="table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th>DetID</th>
-									<th>Situacao</th>
-									<th>Nome</th>
-									<th>Apelido</th>
-									<!--	<th><strong>Observacao</strong></th>
-											<th><strong>VisFoto</strong></th>
-											<th><strong>VisLogradouro</strong></th>
-											<th><strong>VisNumero</strong></th>
-											<th><strong>VisComplemento</strong></th>
-											<th><strong>VisBairro</strong></th>
-											<th><strong>VisCEP</strong></th>
-											<th><strong>VisCidade</strong></th>
-											<th><strong>VisEstado</strong></th>
-											<th><strong>PrtID</strong></th> -->
-									<th>RG</th>
-									<th>CPF</th>
-									<th>Telefone</th>
-									<th>Selecionar/Inativar</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="item" items="${listaVisitante}" varStatus="id">
-									<tr>
-										<td>${item.detID}</td>
-										<td>${item.visSituacao}</td>
-										<td>${item.visNome}</td>
-										<td>${item.visApelido}</td>
-										<!--	<td>${item.visObservacao}</td>
-											<td>${item.visFoto}</td>
-											<td>${item.visLogradouro}</td>
-											<td>${item.visNumero}</td>
-											<td>${item.visComplemento}</td>
-											<td>${item.visBairro}</td>
-											<td>${item.visCEP}</td>
-											<td>${item.visCidade}</td>
-											<td>${item.visEstado}</td>
-											<td>${item.prtID}</td>  -->
-										<td>${item.visRG}</td>
-										<td>${item.visCPF}</td>
-										<td>${item.visTelefone}</td>
-										<td class="td-actions"><a
-											class="btn btn-small btn-success"
-											href="visitanteUpdate?VisID=${item.visID}"> <i
-												class="btn-icon-only icon-ok"> </i></a> <a
-											class="btn btn-danger btn-small"
-											onclick="javascript:inativa();"
-											href="inativa?id=${item.visID}"> <i
-												class="btn-icon-only icon-remove"> </i></a></td>
-									</tr>
-								</c:forEach>
-
-							</tbody>
-						</table>
-					</div>
-					<!-- /widget-content -->
+	
 				</div>
 			</div>
 		</div>
@@ -186,6 +115,8 @@
 	<script src="/sicap_assets/assets/js/bootstrap.js"></script>
 	<script language="javascript" type="text/javascript"
 		src="/sicap_assets/assets/js/full-calendar/fullcalendar.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
 
 	<script>
 function inativa(){
@@ -199,6 +130,8 @@ if (decisao){
 };
 
 $(document).ready(function() {
+	 $('#vistable').DataTable();
+	
 var date = new Date();
 var d = date.getDate();
 var m = date.getMonth();
@@ -232,6 +165,14 @@ var calendar = $('#calendar').fullCalendar({
   ]
 });
 });
+
+
+	
+
+		
+		
+		
+
 
 </script>
 	

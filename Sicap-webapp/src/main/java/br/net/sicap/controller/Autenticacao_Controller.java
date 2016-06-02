@@ -48,7 +48,6 @@ public class Autenticacao_Controller {
 		UsuarioVO usuarioReceive = new UsuarioVO();
 		modelAndView.addObject("listaVisitante",boVis.listaPersonalizada());
 	        if (!result.hasErrors()){
-	        		   
 				BeanUtils.copyProperties(CMD, usuarioSend);
 				usuarioReceive = bo.autenticaUser(usuarioSend);
 				 System.out.println("Nome:"+usuarioReceive.getUCUserName());
@@ -87,10 +86,11 @@ public class Autenticacao_Controller {
 	        	UsuarioVO VO = new UsuarioVO();
 				BeanUtils.copyProperties(CMD, VO);
 			 bo.CriarUsuario(VO);
+			 System.out.println("Usuario Criado com Sucesso!");
 			modelAndView = new ModelAndView("sucesso");
-			return modelAndView;
-	        }else
+	        }else{
 	        	modelAndView = new ModelAndView("userADM");
+	        }
 	        return modelAndView;
 	}
 	
@@ -101,9 +101,6 @@ public class Autenticacao_Controller {
 		this.id = UCIdUser;
 		modelAndView.addObject("update", bo.listUsersById(UCIdUser));
 		modelAndView.addObject("lista", bo.listaUsers());
-		for (UsuarioVO X : bo.listaUsers()) {
-			System.out.println(X.getUCEmail());
-		}
 		return modelAndView;
 	}
 	
@@ -117,6 +114,7 @@ public class Autenticacao_Controller {
 				BeanUtils.copyProperties(CMD, VO);
 			 bo.update(VO);
 			modelAndView = new ModelAndView("sucesso");
+			modelAndView.addObject("lista", bo.listaUsers());
 			System.out.println("Atualizado com sucesso!");
 			return modelAndView;
 	        }else
@@ -130,6 +128,7 @@ public class Autenticacao_Controller {
 		UsuarioVO user = new UsuarioVO();
 		user.setUCIdUser(UCIdUser);
 		bo.InativarUsuario(user);
+		System.out.println("Usuario inativado com sucesso!" + user.getUCIdUser());
 		modelAndView.addObject("lista", bo.listaUsers());
 		return modelAndView;
 	}

@@ -7,21 +7,19 @@
 			</a>
 			<!--  <a class="brand" href="index.html">SICAP </a> -->
 			<ul>
-				<li id="li"><a class="navbar brand" href="home">Visitantes
+				<li id="li"><a class="navbar brand" href="visitanteHome">Visitantes
 				</a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Detentos
+				<li id="li"><a class="navbar brand" href="DetentoADM">Detentos
 				</a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Digitais
+				<li id="li"><a class="navbar brand" href="listCPC">Classificação COR
 				</a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Históricos
-						entradas/saidas </a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Histórico
-						visitas </a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Restrições
+				<li id="li"><a class="navbar brand" href="historicoStatus">Históricos
+						Status </a></li>
+				<li id="li"><a class="navbar brand" href="ADMPrisional">ADM Prisional </a></li>
+				<li id="li"><a class="navbar brand" href="listTpSts">Tipo Status
 				</a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Digitais
-				</a></li>
-				<li id="li"><a class="navbar brand" href="index.html">Associação</a>
+				<li id="li"><a class="navbar brand" href="userADM">Usuários</a></li>
+				<li id="li"><a class="navbar brand" href="prt_list">Parentesco</a></li>
 				</li>
 			</ul>
 

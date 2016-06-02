@@ -73,7 +73,7 @@
 
 					<div class="field">
 						<label for="user">Usuário</label>
-						<form:input type="text" id="user" path="UCLogin" value=""
+						<form:input type="text" name="user" path="UCLogin" value=""
 							placeholder="Username" class="login username-field" />
 					 <form:errors path="UCLogin" />
 					</div>
@@ -81,7 +81,7 @@
 
 					<div class="field">
 						<label for="password">Senha</label>
-						<form:input type="password" id="password" path="UCPassword" value=""
+						<form:input type="password" name="password" path="UCPassword" value=""
 							placeholder="Password" class="login password-field" />
 					</div>
 					<!-- /password -->
@@ -109,18 +109,40 @@
 		<!-- /content -->
 	
 </div> <!-- /account-container -->
+<script src="/sicap_assets/assets/js/jquery-1.7.2.min.js"></script>
+<script src="/sicap_assets/assets/js/bootstrap.js"></script>
+<script src="/sicap_assets/assets/js/signin.js"></script>
+<script src="/sicap_assets/assets/js/jquery.validate.min.js"></script>
+<script>
 
+$(document).ready(function(){
+    //Form Validation
+    $("#formAutentica").validate({
+      rules: {
+        "user":{
+          required: true,
+          minlength: 6
+        },
+        "password":{
+          required: true,
+          rangelength: [12, 20]
+          
+        }
+      },
+      messages: {
+        "user":{
+          required: 'Campo obrigatorio',
+          minlength: 'O campo precisa ter no minimo 6 caracteres'
+        },
+        "password":{
+          required: 'Campo obrigatorio',
+        	  rangelength: 'A senha deve conter entre 12 e 20 caracteres'
+        }
+      }
+    });
 
-
-<div class="login-extra">
-	<a href="#">Primeiro acesso?</a>
-</div> <!-- /login-extra -->
-	
-
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
-
-<script src="js/signin.js"></script>
+  });
+</script>
 
 </body>
 

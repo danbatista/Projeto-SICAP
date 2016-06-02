@@ -56,9 +56,9 @@ public class CelaPavDAOImpl extends JdbcTemplate implements ICelaPavilhaoDAO{
 		}
 	}
 	
-	private final static String INSERT_P = "INSERT INTO tblPavilhao(Pavilhão) VALUES (?)";
+	private final static String INSERT_P = "INSERT INTO tblPavilhao(Pavilhao) VALUES (?)";
 	private final static String DELETE_P = "DELETE FROM tblPavilhao WHERE PavID = ?"; 
-	private final static String UPDATE_P = "UPDATE tblPavilhao set Pavilhão = ? WHERE PavID = ?"; 	
+	private final static String UPDATE_P = "UPDATE tblPavilhao set Pavilhao = ? WHERE PavID = ?"; 	
 
 	public boolean insert_Pavilhao(CelaPavilhaoVO vo) {
 		// TODO Auto-generated method stub

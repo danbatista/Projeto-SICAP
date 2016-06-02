@@ -130,7 +130,7 @@
 							</div>
 							
 							<div class="control-group">
-								<label class="control-label" for="prtId">Prontuário ID</label>
+								<label class="control-label" for="prtId">Parentesco ID</label>
 								<div class="controls">
 									<form:input id="prtId" path="PrtID"  class="span6" placeholder="" type="text"/>
 									<form:errors path="PrtID" cssClass="error" />
@@ -233,6 +233,7 @@
 						</form:form>
 					</div>
 	  				<div class="tab-pane" id="update">
+	  				<%@ include file="visitante_update.jsp" %>
 	  			</div>
 			
 			</div>

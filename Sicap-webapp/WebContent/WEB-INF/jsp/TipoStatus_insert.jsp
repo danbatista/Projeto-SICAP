@@ -8,6 +8,8 @@
 <title>Cadastro de Status</title>
 </head>
 <body>
+ 
+    <h2>Inserir Novo tipo de Status</h2>
 
 	<form:form action="sendFormInsertTpSts" class="form"
 		commandName="Tipo_Status_Command">
