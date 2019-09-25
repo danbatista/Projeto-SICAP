@@ -1,10 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project-modules id="moduleCoreId" project-version="1.5.0">
-	<wb-module deploy-name="Sicap-webapp">
-		<wb-resource deploy-path="/" source-path="/WebContent"
-			tag="defaultRootSource" />
-		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java" />
-		<property name="context-root" value="Sicap-webapp" />
-		<property name="java-output-path" value="/Sicap-webapp/build/classes" />
-	</wb-module>
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            	
+    
+    
+    <wb-module deploy-name="br.net.sicap-1.0.0">
+                        		
+        
+        
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent"/>
+                        
+        
+        <dependent-module archiveName="sicap-business-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sicap-business/sicap-business">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        		
+        
+        
+        <property name="java-output-path" value="/Sicap-webapp/build/classes"/>
+        <property name="context-root" value="br.net.sicap"/>
+                        	
+    
+    
+    </wb-module>
+            
+
+
 </project-modules>
